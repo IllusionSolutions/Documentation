@@ -6,12 +6,13 @@ branch: documentation
 │   README.md
 │	Tex.gitignore
 │
-└─── Functional_Architectural Documentation
-│   ├─── images
-│   ├─── auxillary_files
-│   │ FinalDocument.pdf
+└─── Functional_Architectural Documentation/
+│   ├─── images/
+│   ├─── resources/
+│   │ architectural_functional.tex
+│   │ architectural_functional.pdf
 │
-└─── Software Documentation
+└─── Software Documentation/
 ```
 
 ###Maintained by:###
