@@ -56,18 +56,18 @@
 	\newpage
 	\section{Proposed Frameworks and Technologies}
 	\subsection{Current transformer data transfers}
-	Serial Peripheral Interface (SPI) will be used to send data to the photon. SPI is used as a synchronous data bus,
+	\paragraph{Serial Peripheral Interface (SPI) will be used to send data to the photon. SPI is used as a synchronous data bus,
 	and uses seperate lines for data and a clock which keeps both sides of the SPI in sync. The receiver (particle photon) detects an incoming 
-	edge and will immediately data line. 
+	edge and will immediately data line.}
+	\paragraph{There are no alternatives to this technology.}
 	\subsection{Particle Photon}
-	Particle API js will be used for communications and transfers from the Particle Photon to the server. The library contains all
-	methods that will be needed to connect the device to wifi and post data to the server.
+	\paragraph{The Photon has built in functionalities, coded in C++, which will be used for communications and transfers from the Particle Photon to the server.} 
 	
-	There are no alternatives to this technology.
+	\paragraph{There are no alternatives to this technology.}
 	\subsection{Database}
-	As a database we'll use an already existing database service called Firebase. Firebase is a cloud database service provider. It will be
-	able to store JSON data and supports a high number of multi-threading requests. The database is also accessible through a REST API and 
-	bindings for several JavaScript frameworks including AngularJS and Ember.js.
+	One of our choices for a web server is NodeJS. NodeJS is run-time environment for server-side web applications. It has an event driven
+	architecture that achieves asynchronous input and output capability. It's suitable for this project because it keeps a persistent connection
+	from the browser to the server. Therefore updates will be able to be sent to the clients in real time.
 	\subsection{Data format}
 	The data format that will be used is JSON. JSON is a lightweight data-interchange format which is also easy to understand and
 	manipulate. The particle already has built in functionality in posting data in JSON format, making it a simpler process.
