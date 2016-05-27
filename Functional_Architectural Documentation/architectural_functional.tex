@@ -26,7 +26,7 @@
 }
 
 \author {
-	Brandon Wardley  \\
+	Brandon Wardley u29005150 \\
 	Mothusi Masibi \\
 	Marc Antel \\
 	Stuart Andrews \\
@@ -44,6 +44,37 @@
 	A user within the system will have access to a number of functions. Users will be able to add and set up new devices, adding to the system, which will send data based on readings from the attached appliance. Additionally, the user can view the data once it has be stored on the persistence provider, and can request reports based off of this data.
 	\newpage
 	\section{Scope}
+	\subsection{Device Management}
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/deviceManagementScope.jpg}  \\
+			\caption{The scope of functionality required from the deviceManagement module}
+		\end{figure}
+		
+		A user is able to add and register a new device onto the system, as well as remove old, unnecessary devices. The user can set the measurement thresholds for a specific device, and set how often the device should aim to transfer its data to the web server.
+		
+	\subsection{User Management}
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/userManagementScope.jpg}  \\
+			\caption{The scope of functionality required from the userManagement module.}
+		\end{figure}
+		
+		A user is able to add other users to the system, as well as remove old or redundant users. A user can set their personal email address, as well as their password.
+		
+	\subsection{Data Management}
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/dataManagementScope.jpg}  \\
+			\caption{The scope of functionality required from the dataManagement module.}
+		\end{figure}
+		
+		The particle device will regularly send the data it has accumulated to the web server. The web server can verify the data which it receives, perform the necessary calculations on the received data to calculate desired values, and store the data and results to the persistence service.
+		
+	\subsection{Reporting Scope}
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth]{images/reportingScope.jpg}  \\
+		\caption{The scope of functionality required from the reporting module.}
+	\end{figure}
+	
+	The user can request a report made up of data from between a certain period of time, from a certain set of devices, containing a certain set of fields. The web server requests the report from the reporting service, which accesses the required data, compiles and returns the report to the web server.
 	\newpage
 	\section{Initial Architecture Design}
 	\newpage
