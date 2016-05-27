@@ -51,46 +51,42 @@
 	\newpage
 	\section{Non-functional Requirements}
 	\subsection{Quality requirements}
-	\paragraph{Scalability: Server needs to handle up to 100 000 simultaneous connections.}
-	\paragraph{Reliability: The entire system should be portable to endure close to 100% up
-	time.}
-	\paragraph{Quality: Server needs to ensure that data is valid and consistent.}
-	\paragraph{Recoverability: If the device goes offline, data should not be lost.}
-	\paragraph{Security: Security of devices should be handled to prevent unauthorized
-	devices to log data.}
-	\subsection{Access channel}
+	Scalability: Server needs to handle up to 100 000 simultaneous connections.\\
+	\\Reliability: The entire system should be portable to endure close to 100% up
+	time.\\
+	\\Quality: Server needs to ensure that data is valid and consistent.\\
+	\\Recoverability: If the device goes offline, data should not be lost.\\
+	Security: Security of devices should be handled to prevent unauthorized
+	devices to log data.
 	\newpage
 	\section{Proposed Frameworks and Technologies}
 	\subsection{Current transformer data transfers}
-	\paragraph{Serial Peripheral Interface (SPI) will be used to send data to the photon. SPI is used as a synchronous data bus,
+	Serial Peripheral Interface (SPI) will be used to send data to the photon. SPI is used as a synchronous data bus,
 	and uses seperate lines for data and a clock which keeps both sides of the SPI in sync. The receiver (particle photon) detects an incoming 
-	edge and will immediately data line.}
-	\paragraph{There are no alternatives to this technology.}
+	edge and will immediately data line.\\
+	\\There are no alternatives to this technology.
 	\subsection{Particle Photon}
-	\paragraph{The Photon has built in functionalities, coded in C++, which will be used for communications and transfers from the Particle Photon to the server.} 
-	
-	\paragraph{There are no alternatives to this technology.}
+	The Photon has built in functionalities, coded in C++, which will be used for communications and transfers from the Particle Photon to the server.\\ 
+	\\There are no alternatives to this technology.
 	\subsection{Web Server}
-	\paragraph{One of our choices for a web server is NodeJS. NodeJS is run-time environment for server-side web applications. It has an event driven
+	One of our choices for a web server is NodeJS. NodeJS is run-time environment for server-side web applications. It has an event driven
 	architecture that achieves asynchronous input and output capability. It's suitable for this project because it keeps a persistent connection
-	from the browser to the server. Therefore updates will be able to be sent to the clients in real time.}
+	from the browser to the server. Therefore updates will be able to be sent to the clients in real time.
 	\subsection{Database}
-	\paragraph{As database options we have Firebase, which is an already existing database service. Firebase is a key-value, cloud database service provider. It will be
+	As database options we have Firebase, which is an already existing database service. Firebase is a key-value, cloud database service provider. It will be
 	able to store JSON data and supports a high number of multi-threading requests. The database is also accessible through a REST API and 
 	bindings for several JavaScript frameworks including AngularJS and Ember.js. It provides real-time data sync and offline storage which will be
-	very useful for our system.}
-	\paragraph{The other option is using MongoDB. MongoDB is a document-oriented noSQL database. Issues with using MongoDB in this system are that it
-	doesn't provide real-time data sync and no offline storage. Therefore extra provisions will have to be made to ensure these capabilties.}
+	very useful for our system.\\
+	\\The other option is using MongoDB. MongoDB is a document-oriented noSQL database. Issues with using MongoDB in this system are that it
+	doesn't provide real-time data sync and no offline storage. Therefore extra provisions will have to be made to ensure these capabilties.
 	\subsection{Data format}
 	The data format that will be used is JSON. JSON is a lightweight data-interchange format which is also easy to understand and
-	manipulate. The particle already has built in functionality in posting data in JSON format, making it a simpler process.
-	
-	Alternatively MessagePack could be used. Since MessagePack uses binary serializaton to make faster and smaller data compared to JSON.
+	manipulate. The particle already has built in functionality in posting data in JSON format, making it a simpler process.\\
+	\\Alternatively MessagePack could be used. Since MessagePack uses binary serializaton to make faster and smaller data compared to JSON.
 	If data size is a concern then MessagePack will be a good alternative.
 	\subsection{Web Application}
-	\paragraph{The web application architecture will be Angular.js. It is a powerful flexible framework with good modularization and extensive module
+	The web application architecture will be Angular.js. It is a powerful flexible framework with good modularization and extensive module
 	repositories. Angular.JS uses two-way binding and updates the virtual DOM, which could be necessary with the web applicatio. It also works
-	hand in hand with our database technology Firebase.}
-	
-	\paragraph{Alternative frameworks would be Ember.js and REACT.}
+	hand in hand with our database technology Firebase.\\
+	\\Alternative frameworks would be Ember.js and REACT.
 \end{document}
