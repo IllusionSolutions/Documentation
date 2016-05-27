@@ -1,39 +1,39 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.21)  21 MAY 2016 17:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.27)  27 MAY 2016 23:12
 entering extended mode
 **./architectural_functional.tex
 (architectural_functional.tex
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9n> and hyphenation patterns for 69 languages loaded.
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scra
-rtcl.cls"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrartc
+l.cls"
 Document Class: scrartcl 2016/05/10 v3.20 KOMA-Script document class (article)
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrk
-base.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrkbas
+e.sty"
 Package: scrkbase 2016/05/10 v3.20 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrb
-ase.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrbase
+.sty"
 Package: scrbase 2016/05/10 v3.20 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
-sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.sty
+"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrl
-file.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrlfil
+e.sty"
 Package: scrlfile 2016/05/10 v3.20 KOMA-Script package (loading files)
 
 Package scrlfile, 2016/05/10 v3.20 KOMA-Script package (loading files)
                   Copyright (C) Markus Kohm
 
 )))
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\tocb
-asic.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\tocbasi
+c.sty"
 Package: tocbasic 2016/05/10 v3.20 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
@@ -50,13 +50,13 @@ Package tocbasic Info: omitting babel extension for `lot'
 Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input l
 ine 2051.
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrs
-ize11pt.clo"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\scrsize
+11pt.clo"
 File: scrsize11pt.clo 2016/05/10 v3.20 KOMA-Script font size class option (11pt
 )
 )
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\type
-area.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\koma-script\typeare
+a.sty"
 Package: typearea 2016/05/10 v3.20 KOMA-Script package (type area)
 
 Package typearea, 2016/05/10 v3.20 KOMA-Script package (type area)
@@ -107,25 +107,23 @@ LaTeX Info: Redefining \textsubscript on input line 4025.
 \c@table=\count87
 Class scrartcl Info: Redefining `\numberline' on input line 5012.
 \bibindent=\dimen102
-)
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.st
-y"
+) ("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.sty
+"
 Package: babel 2016/01/08 3.9n The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\bblopts
-.cfg"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\bblopts.cf
+g"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-english\en
-glish.ldf"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-english\engli
+sh.ldf"
 Language: english 2012/08/20 v3.3p English support from the babel system
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.de
-f"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2016/01/08 3.9n Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
@@ -143,8 +141,8 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              package `fancyhdr' on input line 5.
 
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhd
-r.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.s
+ty"
 \fancy@headwidth=\skip55
 \f@ncyO@elh=\skip56
 \f@ncyO@erh=\skip57
@@ -155,34 +153,33 @@ r.sty"
 \f@ncyO@olf=\skip62
 \f@ncyO@orf=\skip63
 )
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
-x.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.s
+ty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
-s.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.s
+ty"
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.st
-y"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphic
-s.cfg"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphics.c
+fg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdfte
-x.def"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.d
+ef"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwa
-rerr.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwarer
+r.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcm
-ds.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.
+sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count89
@@ -190,12 +187,10 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.st
-y"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.c
-fg"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -221,8 +216,8 @@ Class scrartcl Warning: Usage of package `titlesec' together
 (scrartcl)              package `titlesec' on input line 8.
 
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titlese
-c.sty"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\titlesec.s
+ty"
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box28
 \beforetitleunit=\skip64
@@ -259,9 +254,7 @@ Package titlesec Warning: Non standard sectioning command detected
 Package scrartcl Warning: Activating an ugly workaround for a missing
 (scrartcl)                feature of package `titlesec` on input line 8.
 
-
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\block.t
-ss"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titlesec\block.tss"
 File: block.tss 2016/03/15
 ) (architectural_functional.aux)
 \openout1 = `architectural_functional.aux'.
@@ -279,8 +272,8 @@ LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 
-("C:\Users\Layout4\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
-mkii"
+("C:\Users\mo2c\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
+i"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count90
 \scratchdimen=\dimen111
@@ -301,26 +294,203 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 
-{C:/Users/Layout4/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] [3] [4] [5] [6] [7] (architectural_functional.aux) ) 
+{C:/Users/mo2c/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+[2] <images/deviceManagementScope.jpg, id=14, 699.61375pt x 481.8pt>
+File: images/deviceManagementScope.jpg Graphic file (type jpg)
+
+<use images/deviceManagementScope.jpg>
+Package pdftex.def Info: images/deviceManagementScope.jpg used on input line 49
+.
+(pdftex.def)             Requested size: 418.25555pt x 288.04564pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+<images/userManagementScope.jpg, id=15, 790.955pt x 594.22pt>
+File: images/userManagementScope.jpg Graphic file (type jpg)
+
+<use images/userManagementScope.jpg>
+Package pdftex.def Info: images/userManagementScope.jpg used on input line 57.
+(pdftex.def)             Requested size: 418.25555pt x 314.22787pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+<images/dataManagementScope.jpg, id=16, 847.165pt x 636.3775pt>
+File: images/dataManagementScope.jpg Graphic file (type jpg)
+
+<use images/dataManagementScope.jpg>
+Package pdftex.def Info: images/dataManagementScope.jpg used on input line 65.
+(pdftex.def)             Requested size: 418.25555pt x 314.18732pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+<images/reportingScope.jpg, id=17, 847.165pt x 573.14125pt>
+File: images/reportingScope.jpg Graphic file (type jpg)
+
+<use images/reportingScope.jpg>
+Package pdftex.def Info: images/reportingScope.jpg used on input line 73.
+(pdftex.def)             Requested size: 418.25555pt x 282.9668pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+[3 <./images/deviceManagementScope.jpg>] [4 <./images/userManagementScope.jpg>]
+[5 <./images/dataManagementScope.jpg>] [6 <./images/reportingScope.jpg>]
+<images/ArchitecturalModel.jpg, id=30, 749.80125pt x 488.82625pt>
+File: images/ArchitecturalModel.jpg Graphic file (type jpg)
+
+<use images/ArchitecturalModel.jpg>
+Package pdftex.def Info: images/ArchitecturalModel.jpg used on input line 81.
+(pdftex.def)             Requested size: 418.25555pt x 272.68166pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+<images/User.jpg, id=31, 329.23pt x 247.92625pt>
+File: images/User.jpg Graphic file (type jpg)
+ <use images/User.jpg>
+Package pdftex.def Info: images/User.jpg used on input line 86.
+(pdftex.def)             Requested size: 418.25555pt x 314.97633pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+<images/DeviceManagement.jpg, id=32, 266.9975pt x 302.12875pt>
+File: images/DeviceManagement.jpg Graphic file (type jpg)
+
+<use images/DeviceManagement.jpg>
+Package pdftex.def Info: images/DeviceManagement.jpg used on input line 91.
+(pdftex.def)             Requested size: 418.25555pt x 473.33817pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+<images/DataManagement.jpg, id=33, 596.2275pt x 351.3125pt>
+File: images/DataManagement.jpg Graphic file (type jpg)
+
+<use images/DataManagement.jpg>
+Package pdftex.def Info: images/DataManagement.jpg used on input line 96.
+(pdftex.def)             Requested size: 418.25555pt x 246.44775pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+<images/Reporting.jpg, id=34, 351.3125pt x 216.81pt>
+File: images/Reporting.jpg Graphic file (type jpg)
+
+<use images/Reporting.jpg>
+Package pdftex.def Info: images/Reporting.jpg used on input line 101.
+(pdftex.def)             Requested size: 418.25555pt x 258.14273pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+[7 <./images/ArchitecturalModel.jpg>] [8 <./images/User.jpg>] [9 <./images/Devi
+ceManagement.jpg>] [10 <./images/DataManagement.jpg> <./images/Reporting.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 107--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--119
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 124--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+
+Overfull \hbox (0.85344pt too wide) in paragraph at lines 140--141
+\OT1/cmr/m/n/10.95 The other op-tion is us-ing \OT1/cmr/m/it/10.95 Mon-goDB\OT1
+/cmr/m/n/10.95 . Mon-goDB is a document-oriented No-SQL database.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+
+ []
+
+[13] (architectural_functional.aux) ) 
 Here is how much of TeX's memory you used:
- 4143 strings out of 493634
- 66129 string characters out of 3134423
- 218569 words of memory out of 3000000
- 7526 multiletter control sequences out of 15000+200000
- 6653 words of font info for 24 fonts, out of 3000000 for 9000
+ 4204 strings out of 493634
+ 67430 string characters out of 3135647
+ 220579 words of memory out of 3000000
+ 7574 multiletter control sequences out of 15000+200000
+ 7307 words of font info for 26 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,11n,51p,8505b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Layout4/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/User
-s/Layout4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcs
-c10.pfb><C:/Users/Layout4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr10.pfb><C:/Users/Layout4/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Layout4/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on architectural_functional.pdf (7 pages, 64707 bytes).
+ 41i,11n,51p,8505b,235s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/mo2c/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/mo2c/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/mo2c/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/U
+sers/mo2c/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb><C:/Users/mo2c/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb><C:/Users/mo2c/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb><C:/Users/mo2c/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on architectural_functional.pdf (13 pages, 683030 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
+ 82 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
