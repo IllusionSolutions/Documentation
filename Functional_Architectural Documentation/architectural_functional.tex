@@ -69,9 +69,12 @@
 	architecture that achieves asynchronous input and output capability. It's suitable for this project because it keeps a persistent connection
 	from the browser to the server. Therefore updates will be able to be sent to the clients in real time.}
 	\subsection{Database}
-	One of our choices for a web server is NodeJS. NodeJS is run-time environment for server-side web applications. It has an event driven
-	architecture that achieves asynchronous input and output capability. It's suitable for this project because it keeps a persistent connection
-	from the browser to the server. Therefore updates will be able to be sent to the clients in real time.
+	\paragraph{As database options we have Firebase, which is an already existing database service. Firebase is a key-value, cloud database service provider. It will be
+	able to store JSON data and supports a high number of multi-threading requests. The database is also accessible through a REST API and 
+	bindings for several JavaScript frameworks including AngularJS and Ember.js. It provides real-time data sync and offline storage which will be
+	very useful for our system.}
+	\paragraph{The other option is using MongoDB. MongoDB is a document-oriented noSQL database. Issues with using MongoDB in this system are that it
+	doesn't provide real-time data sync and no offline storage. Therefore extra provisions will have to be made to ensure these capabilties.}
 	\subsection{Data format}
 	The data format that will be used is JSON. JSON is a lightweight data-interchange format which is also easy to understand and
 	manipulate. The particle already has built in functionality in posting data in JSON format, making it a simpler process.
