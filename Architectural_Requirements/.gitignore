@@ -1,0 +1,6 @@
+# Latex temp files - Feel free to add
+*.aux
+*.log
+*.toc
+*.pdf
+*.synctex.gz
