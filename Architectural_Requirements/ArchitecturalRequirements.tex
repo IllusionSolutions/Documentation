@@ -174,14 +174,64 @@ The layers used within the PowerCloud system are as follows:\\
 
 \newpage
 
-\section{Use of reference architectures and frameworks}
+%\section{Use of reference architectures and frameworks}
 
-\newpage
+
+
+%\newpage
 
 \section{Access and integration channels}
+	
+	As mentioned earlier, the PowerCloud system has two main access channels. The first access channel is in the form of a web application, whereby human users are able to interact with the system. The main forms of interaction for human users are the retrieval of information from the database by requesting various reports, the addition of new information into the database, namely the addition of new devices, and editing already stored information, namely the changing of a devices ID or status.\\
+	
+	The web application is designed using Angular.js, HTML5 and Cascading Style Sheets (CSS). HTML is the accepted standard markup language used when creating web pages, and will allow the web application to run on a number of standard browsers. CSS will allow the presentation of the web pages to be customised in a modular and reusable manner, which is also stored separately from the actual content of the web page. Angular.js is a framework which is used to determine the layout and other functionality of web pages, with the potential of the addition of Asynchronous JavaScript and XML (AJAX) functionality. Angular.js is based on the Model-View-Control architecture.\\
+	
+	The second main access channel is the Particle device, which is responsible for taking measurements from an attached appliance, and sending those measurements on to the application server. The Particle Photon communicates with the measuring device using the SPI protocol, where the measuring device is responsible for taking current and voltage readings from the appliance by using a current converter. The Photon itself is interacted with using its firmware and the Particle API. The Photon communicates with the application server using MQTT, a lightweight addition to the TCP/IP protocol which allows for reliable communication whilst requiring limited network bandwidth.\\
+	
+	When communicating with the FireBase service, the REsT architecture is used. This allows communication over TCP/IP using HTTP verbs, namely GET and POST in this case. GET is used to request data from the FireBase database, whilst POST is used to send data to the service. The REsT API allows the use of these commands, and controls their usage.
 
 \newpage
 
 \section{Technologies}
+
+	\subsection{Serial Peripheral Interface}
+	
+	The Serial Peripheral Interface (SPI) protocol is used to send data between the measuring device and the Photon. SPI is used as a synchronous data bus, and uses separate lines for data transfer and the clock pulse, which ensures that both the receiving and transmitting ends are synchronised.\\
+	
+	\noindent
+	There are no alternatives to this technology, as its usage is specified by the client.
+	
+	\subsection{Particle Photon}
+	
+	The Photon is a compact hardware board which contains a number of built in components, such as a wi-fi module, light emitting diodes (LEDs), an Analogue to Digital Converter (ADC), to name a few. The Photon is interacted with using the Particle API, and its firmware is coded using C++. The Photon is used for data storage, as well as data transmission to the application server.\\
+	
+	\noindent
+	There are no alternatives to this technology, as its usage is specified by the client.
+	
+	\subsection{MQ Telemetry Transport}
+	
+	MQTT is a lightweight messaging protocol which is used on top of the TCP/IP protocol. It is specially designed for usage in situations where a small code footprint is required, and limited bandwidth is available, which makes it suitable for usage within Internet of Things (IoT) projects such as PowerCloud. Additionally, it provides reliable communication, and allows for acknowledgement of successful data reception from the receiver, and retransmission upon delivery failure. MQTT functions using a publish/subscribe system.
+	
+	\subsection{Java Server}
+	
+	The application server is coded using Java. Java is chosen as it comes with a well established knowledgebase, and is a mature programming language which is readily supported. A Java server allows for the usage of multiple threads, and also provides automated garbage management services, amongst others. Java is also supported by the FireBase service.
+	
+	\subsection{NodeJS}
+	
+	NodeJS is used to compile the web server. NodeJS is a run-time environment used for server-side web applications. It provides an event driven architecture that achieves asynchronous input and output capabilities. It allows for a  persistent connection to be maintained between the browser and the server, which is suitable for the PowerCloud system. Any changes made on the data set can immediately be propagated through the NodeJS server to the web application.
+	
+	\subsection{AngularJS}
+	
+	AngularJS will be used for the web application framework. It is a powerful and flexible framework which provides modularization with extensive module repositories, and allows real-time web page updates without requiring a refresh by using AJAX. AngularJS uses two-way binding and update the virtual Document Object Model (DOM), which will be necessary within the web application. NodeJS is also well supported by FireBase.
+	
+	\subsection{FireBase}
+	
+	FireBase is a persistence provider. It is a document store cloud based database provider which stores data in a JavaScript Object Notation format. It is tailored to provide scalability on request, increasing the number of concurrent connections allowed with the proportion to the size of the data set. A database built on FireBase's infrastructure is accessible using their REsT API, as well as through bindings for JavaScript frameworks, such as AngularJS. FireBase provides real-time data synchronisation, with the database immediately reflecting any changes across multiple clients. FireBase servers are located in many major city centres around the world, which allows optimal connection speeds , regardless of where it is accessed from. These characteristics make FireBase an ideal choice for PowerCloud, which focuses on real-time cloud based database storage and access.
+	
+	\subsection{JavaScript Object Notation}
+	
+	JavaScript Object Notation (JSON) is a lightweight data-interchange format which is easy to understand and manipulate. JSON is natively supported across various technologies, and can often be used in its raw form with no extra manipulation. This makes it ideal for use within the PowerCloud system.
+	
+	\subsection{Reporting}
 
 \end{document}          
