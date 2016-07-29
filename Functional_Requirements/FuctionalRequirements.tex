@@ -3,7 +3,6 @@
 %Packages
 \usepackage{graphicx}
 \usepackage{grffile}
-\usepackage{float}
 
 %Margins
 \usepackage[
@@ -42,209 +41,227 @@ includefoot
 }
 
 \begin{document}
-\maketitle
-\thispagestyle{empty}
-\newpage
-\tableofcontents
-\newpage
-
-\section{Introduction}
-\newpage
-\section{Vision}
-\textbf{PowerCloud} is a system which allows its users to measure the power consumption of an appliance, store this information on a cloud platform, and view useful reports based on this information via a web interface. The system will allow the storage of important meta-data pertaining to a source's power consumption and which devices the data is taken from. The system is initially intended to be used for internal use and testing by the client, Buhler.\\
-
-The system will consist out of a hardware component, and a software component. The hardware component will be tasked with measuring the current and voltage from an input device, which will be used to perform the power calculations which are required. The hardware device will send this information to a web server. This server will perform any required processing on this information, before posting it to a persistence provider.\\
-
-A user within the system will have access to a number of functions. Users will be able to add and set up new devices, adding to the system, which will send data based on readings from the attached appliance. Additionally, the user can view the data once it has be stored on the persistence provider, and can request reports based off of this data.
-\newpage
-\section{Background}
-PowerCloud enables the tracking and monitoring of the power and electricity 
-usage of electrical appliances and machines. PowerCloud could potentially help 
-businesses understand the fluctuations in energy usages and could use this 
-knowledge to optimizes costs in terms of running electrical equipment.
-
-PowerCloud enables a single person to monitor a whole host of appliances at any 
-given time, instead of perhaps having a single engineer observing multiple 
-machines gauges for example. This would speed up the process of determining if 
-a machine is running correctly or if there's a potential problem with it. The 
-foresight that PowerCloud provides could be the difference in spotting a 
-problem in a machine and the destruction of said machine.
-\newpage
-\section{Functional Requirements and Application Design}
-\subsection{Use case prioritization}
-\subsubsection{Application Server}
-\begin{enumerate}
-	\item	MQTT Server Startup - Critical
-	\item	Firebase Authorisation - Critical
-	\item	Validate ID - Important
-	\item	Storing Data in Firebase - Critical
-\end{enumerate}
-\subsubsection{Firmware}
-\begin{enumerate}
-	\item	Particle Photon Connecting to Server - Critical
-\end{enumerate}
-\subsubsection{Web}
-\begin{enumerate}
-	\item	User Add Device - Critical
-	\item	Create Firebase Database - Critical
-	\item	User Registration - Important
-	\item	User Login - Important
-	\item	Retrieve Data  - Important
-\end{enumerate}
-\subsection{Use case/Services contracts}
-\subsubsection{Application Server}
-\begin{enumerate}
-	\item	MQTT Server Startup
+	\maketitle
+	\thispagestyle{empty}
+	\newpage
+	\tableofcontents
+	\newpage
+	
+	\section{Introduction}
+	\newpage
+	\section{Vision}
+	\textbf{PowerCloud} is a system which allows its users to measure the power consumption of an appliance, store this information on a cloud platform, and view useful reports based on this information via a web interface. The system will allow the storage of important meta-data pertaining to a source's power consumption and which devices the data is taken from. The system is initially intended to be used for internal use and testing by the client, Buhler.\\
+	
+	The system will consist out of a hardware component, and a software component. The hardware component will be tasked with measuring the current and voltage from an input device, which will be used to perform the power calculations which are required. The hardware device will send this information to a web server. This server will perform any required processing on this information, before posting it to a persistence provider.\\
+	
+	A user within the system will have access to a number of functions. Users will be able to add and set up new devices, adding to the system, which will send data based on readings from the attached appliance. Additionally, the user can view the data once it has be stored on the persistence provider, and can request reports based off of this data.
+	\newpage
+	\section{Background}
+	PowerCloud enables the tracking and monitoring of the power and electricity 
+	usage of electrical appliances and machines. PowerCloud could potentially help 
+	businesses understand the fluctuations in energy usages and could use this 
+	knowledge to optimizes costs in terms of running electrical equipment.
+	
+	PowerCloud enables a single person to monitor a whole host of appliances at any 
+	given time, instead of perhaps having a single engineer observing multiple 
+	machines gauges for example. This would speed up the process of determining if 
+	a machine is running correctly or if there's a potential problem with it. The 
+	foresight that PowerCloud provides could be the difference in spotting a 
+	problem in a machine and the destruction of said machine.
+	\newpage
+	\section{Functional Requirements and Application Design}
+	\subsection{Use case prioritization}
+	\subsubsection{Application Server}
 	\begin{enumerate}
-		\item  Pre-Conditions
+		\item	MQTT Server Startup - Critical
+		\item	Firebase Authorisation - Critical
+		\item	Validate ID - Important
+		\item	Storing Data in Firebase - Critical
+	\end{enumerate}
+	\subsubsection{Firmware}
+	\begin{enumerate}
+		\item	Particle Photon Connecting to Server - Critical
+	\end{enumerate}
+	\subsubsection{Web}
+	\begin{enumerate}
+		\item	User Add Device - Critical
+		\item	Create Firebase Database - Critical
+		\item	User Registration - Important
+		\item	User Login - Important
+		\item	Retrieve Data  - Important
+	\end{enumerate}
+	\subsection{Use case/Services contracts}
+	\subsubsection{Application Server}
+	\begin{enumerate}
+		\item	MQTT Server Startup
 		\begin{enumerate}
-			\item  	Server.conf configuration file needs to be present in order for the Server to start listening for incoming MQTT Connection and 
-			Publish requests on the correct ports.
-			\item	Server throws a MissingConfigFileException if the Server.conf file is not present.
-		\end{enumerate}
-		\item  Post-Conditions		
-		\begin{enumerate}
-			\item	Server can receive MQTT requests.
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item  	Server.conf configuration file needs to be present in order for the Server to start listening for incoming MQTT Connection and 
+				Publish requests on the correct ports.
+				\item	Server throws a MissingConfigFileException if the Server.conf file is not present.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Server can receive MQTT requests.
+			\end{enumerate}
 		\end{enumerate}
 	\end{enumerate}
-		\end{enumerate}
 	\subsubsection{Firebase}
 	\begin{enumerate}
 		\item	Firebase Authorisation
-	\begin{enumerate}
-		\item  Pre-Conditions
 		\begin{enumerate}
-			\item	auth.json file needs to be present in order to achieve authorisation for powercloud-bf968.firebaseio.com.
-			\item	Device must have authorisation to access Firebase.
-			\item	Server throws a MissingAuthorisationFileException.
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	auth.json file needs to be present in order to achieve authorisation for powercloud-bf968.firebaseio.com.
+				\item	Device must have authorisation to access Firebase.
+				\item	Server throws a MissingAuthorisationFileException.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Device can save and retrieve data to and from Firebase.
+			\end{enumerate}
 		\end{enumerate}
-		\item  Post-Conditions		
+		\item Validate ID
+		\clearpage
+		\begin{figure}[ht]
+			\includegraphics[width=\textwidth]{images/validateIdServiceContract.jpg}
+			\caption{Service Contract for validateId \label{overflow}}
+		\end{figure}
 		\begin{enumerate}
-			\item	Device can save and retrieve data to and from Firebase.
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	The Particle Photon must have connected to the server.
+				\item	Device ID must be in Firebase, else it will throw a DeviceNotFoundException.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	The ValidateID function calls the store function, and attempts to store the data.
+			\end{enumerate}
+		\end{enumerate}
+		\item	Storing Data in Firebase
+		\begin{figure}[ht]
+			\includegraphics[width=\textwidth]{images/storeServiceContract.jpg}
+			\caption{Service Contract for store \label{overflow}}
+		\end{figure}
+		\clearpage
+		\begin{enumerate}
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	The Device ID must be valid, before an attempt to store can be made.
+				\item	The storeData object must be valid.
+				\item	Upon failure a StoreException must be thrown.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	The data is stored in Firebase under the correct branch.
+			\end{enumerate}
 		\end{enumerate}
 	\end{enumerate}
-	\item Validate ID
-	\begin{enumerate}
-		\item  Pre-Conditions
-		\begin{enumerate}
-			\item	The Particle Photon must have connected to the server.
-			\item	Device ID must be in Firebase, else it will throw a DeviceNotFoundException.
-		\end{enumerate}
-		\item  Post-Conditions		
-		\begin{enumerate}
-			\item	The ValidateID function calls the store function, and attempts to store the data.
-		\end{enumerate}
-	\end{enumerate}
-	\item	Storing Data in Firebase
-	\begin{enumerate}
-		\item  Pre-Conditions
-		\begin{enumerate}
-			\item	The Device ID must be valid, before an attempt to store can be made.
-			\item	The storeData object must be valid.
-			\item	Upon failure a StoreException must be thrown.
-		\end{enumerate}
-		\item  Post-Conditions		
-		\begin{enumerate}
-			\item	The data is stored in Firebase under the correct branch.
-		\end{enumerate}
-	\end{enumerate}
-\end{enumerate}
 	\subsubsection{Firmware}
 	\begin{enumerate}
-	\item	Particle Photon Connecting to Server	
-	\begin{enumerate}
-		\item  Pre-Conditions
+		\item	Particle Photon Connecting to Server	
 		\begin{enumerate}
-			\item	The Photon must have the correct addresses, i.e. port number and ip/domain name.
-		\end{enumerate}
-		\item  Post-Conditions		
-		\begin{enumerate}
-			\item	The Photon can then begin transmitting data.
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	The Photon must have the correct addresses, i.e. port number and ip/domain name.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	The Photon can then begin transmitting data.
+			\end{enumerate}
 		\end{enumerate}
 	\end{enumerate}
-\end{enumerate}
 	\subsubsection{Web}
-		\begin{enumerate}
-	\item	Create Firebase Database
 	\begin{enumerate}
-		\item  Pre-Conditions
+		\item	Create Firebase Database
 		\begin{enumerate}
-			\item	Client must have a gmail account.
-			\item	Client must create their own Firebase account. i.e. powercloud-bf968.
-			\item	Client must set a password of length 6 and above.
-		\end{enumerate}
-		\item  Post-Conditions		
-		\begin{enumerate}
-			\item	Client can visit firebase.google.com and view their Firebase Database.
-		\end{enumerate}
-	\end{enumerate}
-	\item	User Registration
-	\begin{enumerate}
-		\item  Pre-Conditions
-		\begin{enumerate}
-			\item	Client must register with:
+			\item  Pre-Conditions
 			\begin{enumerate}
-				\item	namecompany name.
-				\item	email address.
-				\item	password.
-				\item	name of Firebase account i.e. powercloud-bf968.
+				\item	Client must have a gmail account.
+				\item	Client must create their own Firebase account. i.e. powercloud-bf968.
+				\item	Client must set a password of length 6 and above.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Client can visit firebase.google.com and view their Firebase Database.
 			\end{enumerate}
 		\end{enumerate}
-		\item  Post-Conditions		
+		\item	User Registration
 		\begin{enumerate}
-			\item	Firebase creates a user entry.
-		\end{enumerate}
-	\end{enumerate}
-	\item	User Login
-	\begin{enumerate}
-		\item  Pre-Conditions
-		\begin{enumerate}
-			\item	Client must be registered.
-			\item	Client must login in with an email address or username, and password.
-		\end{enumerate}
-		\item  Post-Conditions		
-		\begin{enumerate}
-			\item	Client will have access to all devices, will be able to add and remove devices, and retrieve and observe data.
-		\end{enumerate}
-	\end{enumerate}
-	\item	User Add Device
-	\begin{enumerate}
-		\item  Pre-Conditions
-		\begin{enumerate}
-			\item	Client must be logged in.
-			\item	Client must have necessary authorisation.
-			\item	Client must provide the following details:
+			\item  Pre-Conditions
 			\begin{enumerate}
-				\item	Device id.
-				\item	Device appliance, i.e. the appliance who's value it will be reading.
-				\item	Device name.
+				\item	Client must register with:
+				\begin{enumerate}
+					\item	namecompany name.
+					\item	email address.
+					\item	password.
+					\item	name of Firebase account i.e. powercloud-bf968.
+				\end{enumerate}
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Firebase creates a user entry.
 			\end{enumerate}
 		\end{enumerate}
-		\item  Post-Conditions		
+		\item	User Login
 		\begin{enumerate}
-			\item	A sequential entry, i.e. 0,1,2,3...n, will be made in the Firebase Database.
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	Client must be registered.
+				\item	Client must login in with an email address or username, and password.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Client will have access to all devices, will be able to add and remove devices, and retrieve and observe data.
+			\end{enumerate}
+		\end{enumerate}
+		\item	User Add Device
+		\begin{enumerate}
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	Client must be logged in.
+				\item	Client must have necessary authorisation.
+				\item	Client must provide the following details:
+				\begin{enumerate}
+					\item	Device id.
+					\item	Device appliance, i.e. the appliance who's value it will be reading.
+					\item	Device name.
+				\end{enumerate}
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	A sequential entry, i.e. 0,1,2,3...n, will be made in the Firebase Database.
+			\end{enumerate}
+		\end{enumerate}
+		\item	Retrieve Data
+		\begin{enumerate}
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	Client must be logged in.
+				\item	Client must have necessary authorisation.
+				\item	Client must have devices listed, i.e. devices that have already been added.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Returns a JSON object from Firebase containing all the data concerning that specific device. Database.
+			\end{enumerate}
 		\end{enumerate}
 	\end{enumerate}
-	\item	Retrieve Data
-	\begin{enumerate}
-		\item  Pre-Conditions
-		\begin{enumerate}
-			\item	Client must be logged in.
-			\item	Client must have necessary authorisation.
-			\item	Client must have devices listed, i.e. devices that have already been added.
-		\end{enumerate}
-		\item  Post-Conditions		
-		\begin{enumerate}
-			\item	Returns a JSON object from Firebase containing all the data concerning that specific device. Database.
-		\end{enumerate}
-	\end{enumerate}
-\end{enumerate}
-\subsection{Required functionality}
-\subsection{Process specifications}
-\subsubsection{Store Process}
-	\includegraphics[width=\textwidth]{images/Store.jpg}  \\
 	\newpage
-\subsection{Domain Model}
-	\includegraphics[width=\textwidth]{images/Domain Model.jpg}  \\
-\section{Open Issues}
-\end{document}          
+	\subsection{Required functionality}
+	\subsection{Process specifications}
+	\subsubsection{Store Process}
+	\begin{figure}[ht]
+		\includegraphics[width=\textwidth]{images/Store.jpg}
+		\caption{Process specification for store \label{overflow}}
+	\end{figure}
+	\clearpage
+	\subsection{Domain Model}
+	\begin{figure}[ht]
+		\includegraphics[width=\textwidth]{images/Domain Model.jpg}
+		\caption{Domain Model for PowerCloud \label{overflow}}
+	\end{figure}
+	\clearpage
+	\section{Open Issues}
+\end{document} 
