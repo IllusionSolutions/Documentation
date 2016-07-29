@@ -20,19 +20,26 @@
 				\item Gulp
 				\item Particle Dev
 				\item Java 8
+				\item Maven
 			\end{itemize}
 			
 			\textbf{Hardware}
 			\begin{itemize}
 				\item A Particle Photon.
-				\item A Computer with internet access which does not block incoming and outgoing connections on port 1883 and 80.
+				\item A computer with internet access which does not block incoming and outgoing connections on port 1883 and 80.
 			\end{itemize}
+			
 		\subsection{Firmware}
-			Compile and flash the photon with the following commands, please take note that if you run the application server on a local machine, retrieve the IP address and insert it into the firmware's code.\\
-			
-			\textbf{Compiling the Firmware}\\
-			
+			Compile and flash the photon with the following commands, please take note that if you run the application server on a local machine, retrieve the IP address and insert it into the firmware's code as shown below.\\
+
 			Follow the instructions here in order to compile the firmware using Particle Dev.
+			\\
+			\begin{itemize}
+				\item Open the firmware using Particle Dev.
+				\item Click on "\textit{Compile using Partcicle Cloud}".
+				\item Select the device to flash.
+				\item Click on "\textit{flash device}".
+			\end{itemize}
 			
 			\textit{If you run into errors, please see the troubleshooting guide at the end of this document.}
 			
@@ -42,23 +49,49 @@
 			\textbf{Compiling the Application Server}\\
 			Download the sources from GitHub and compile:\\
 			
+			\begin{itemize}
+				\item \textit{\$ mvn package}
+			\end{itemize}		
+				
 			\textit{If you run into errors, please see the troubleshooting guide at the end of this document.}
-		\subsection{Web Server}
-			Open your console and redirect to the web-server files. Run npm install and bower install.
-		
+			
+			\newpage
 	\section{Starting PowerCloud}
 		\subsection{Firmware}
 			Once the firmware has been compiled and the binary file produced. Flash the photon with the following command:
+			
+			\begin{itemize}
+				\item \textit{particle serial flash Photon Name *.ino}
+			\end{itemize}
+			
 		\subsection{Application Server}
-		
-		\subsection{Web Server}
-			To start the PowerCloud Web-Server open the console, redirect to the Web-Server files and run the gulp serve command.
-		
+			Once the application server has been compiled, change your directory to IllusionSolutions/test/, run the application server using the following command
+			
+			\begin{itemize}
+				\item \textit{java -jar applicationServer-*.jar}
+			\end{itemize}
+			
+		\subsection{Web Application}
+			To start the PowerCloud Web application open the console.
+
+			\begin{itemize}
+			\item \textit{npm install}
+			\item \textit{bower install}
+			\item \textit{gulp serve}
+			\end{itemize}
+			
+			The web application should now be available on \textbf{http://localhost:9000/}
+			
+			\newpage
 	\section{Troubleshooting}
-		I am getting errors when trying to install through the console.
-		-Try using sudo before the command. Example: sudo npm install particle-cli
+		\textbf{I am getting errors when trying to install through the console.}
+			\begin{itemize}
+			\item Try using sudo before the command. Example: sudo npm install particle-cli
+			\end{itemize}
 		
-		The Web-Server won't run and is giving errors when executing the gulp serve command.
-		-Make sure you've run npm install and bower install. 
-		-Make sure you're in the correct directory where the web-server is located.
+		\textbf{The Web Application won't run and is giving errors when executing the gulp serve command.} 
+			\begin{itemize}
+			\item Make sure you've run npm install and bower install.
+			\item Make sure you're in the correct directory where the web application is located.
+			\end{itemize}
 \end{document}
