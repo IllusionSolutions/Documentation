@@ -3,6 +3,7 @@
 %Packages
 \usepackage{graphicx}
 \usepackage{grffile}
+\usepackage{float}
 
 %Margins
 \usepackage[
@@ -25,26 +26,57 @@ includefoot
 \renewcommand{\footrulewidth}{0pt}
 
 
-% Title Page
-\title{Functional Specification}
-\author
-{  
-	\\\\\\
-	Stuart Andrews, 12153983 
-	\\\\
-	NAME, XXXXXXXX
-	\\\\
-	NAME, XXXXXXXX 
-	\\\\
-	Brandon Wardley, 29005150 
-	\\\\\\\\\\\\\\
+%Details
+\title{
+	Functional Specification
 }
+\author{Illusion Solutions}
 
+%Document start
 \begin{document}
-	\maketitle
-	\thispagestyle{empty}
+	
+	%Title Page
+	\newgeometry{top=4.5cm}
+	\begin{titlepage}
+		\begin{center}
+			\line(1,0){300} \\
+			[0.1cm]
+			\textsc{\Huge
+				PowerCloud\\
+				Functional Specification
+			} \\
+			[0.1cm]
+			\line(1,0){300} \\
+			[2.0cm]
+			\textsc{\Large
+				Illusion Solutions
+			} \\
+			[3.5cm]
+			
+		\end{center}
+		\begin{flushright}
+			\textsc{\Large
+				Stuart Andrews\\ 
+				12153983\\
+				Marc Antel\\
+				12026973\\
+				Mothusi Masibi\\
+				12004589\\
+				Brandon Wardley\\
+				29005150\\
+				[4.0cm]
+			}
+		\end{flushright}
+		\begin{center}
+			\today
+		\end{center}
+	\end{titlepage}
+	
 	\newpage
+	\restoregeometry
 	\tableofcontents
+	\thispagestyle{empty}
+	
 	\newpage
 	
 	\section{Introduction}
@@ -124,7 +156,7 @@ includefoot
 		\end{enumerate}
 		\item Validate ID
 		\clearpage
-		\begin{figure}[ht]
+		\begin{figure}[H]
 			\includegraphics[width=\textwidth]{images/validateIdServiceContract.jpg}
 			\caption{Service Contract for validateId \label{overflow}}
 		\end{figure}
@@ -140,7 +172,7 @@ includefoot
 			\end{enumerate}
 		\end{enumerate}
 		\item	Storing Data in Firebase
-		\begin{figure}[ht]
+		\begin{figure}[H]
 			\includegraphics[width=\textwidth]{images/storeServiceContract.jpg}
 			\caption{Service Contract for store \label{overflow}}
 		\end{figure}
@@ -252,16 +284,14 @@ includefoot
 	\subsection{Required functionality}
 	\subsection{Process specifications}
 	\subsubsection{Store Process}
-	\begin{figure}[ht]
+	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{images/Store.jpg}
 		\caption{Process specification for store \label{overflow}}
 	\end{figure}
-	\clearpage
 	\subsection{Domain Model}
-	\begin{figure}[ht]
+	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{images/Domain Model.jpg}
 		\caption{Domain Model for PowerCloud \label{overflow}}
 	\end{figure}
-	\clearpage
 	\section{Open Issues}
 \end{document} 
