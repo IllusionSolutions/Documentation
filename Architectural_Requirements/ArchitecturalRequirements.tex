@@ -75,6 +75,15 @@
 
 \newpage
 
+\section{Introduction}
+
+The purpose of this document is to describe the Architectural 
+Specifications of the PowerCloud project. This document is an ongoing 
+piece of work, and is updated as the project progresses. The 
+architectural scope, technologies, access and integration channels will 
+be discussed, and testable quality requirements will be provided where 
+applicable.
+
 \section{Architecture requirements}
 
 This section contains a brief discussion of the software requirements of 
@@ -269,11 +278,11 @@ and architectural constraints.
 	requires the use of the Particle device, through which readings are 
 	taken and transmitted. This enforces the use of the following:\\
 	
-	\noindent\textbf{Serial Peripheral Interface}\\
+	\subsubsection{Serial Peripheral Interface}
 	Communication between the two devices which make up the measuring 
 	device makes use of the Serial Peripheral Interface protocol.\\
 	
-	\noindent\textbf{C++}\\
+	\subsubsection{C++}
 	The Particle device requires that the firmware be coded in C++, using 
 	the Particle API.\\
 
@@ -281,66 +290,69 @@ and architectural constraints.
 
 \section{Architectural patterns and styles}
 
-The primary pattern used within the PowerCloud system is the Layering 
-Pattern. This pattern provides a number of benefits which encouraged its 
-use. Firstly, due to the manner in which it is structured, the layering 
-pattern separates different parts of the system implementation into 
-layers. Each of these layers can easily be removed or replaced without 
-effecting the implementation of other layers. This allows a great deal of 
-modularity, as one layer can be swapped out for another, equivalent 
-layer, allowing front- and back-end implementations to be changed as 
-needed.\\
-
-A second advantage is in the manner in which the layering pattern handles 
-communication between layers. Modules within a layer can only access the 
-modules which are in the same layer, or the next layer below itself. In 
-this way, communication between modules is restricted, such that the 
-client layers would not be able to directly communicate with the 
-persistence layers, which provides an added level of control, as well as 
-a reduction in complexity in the communication between different 
-modules.\\
-
-A third advantage provided by the layering pattern is that it allows each 
-layer and module to be developed independently of one another, which is 
-of great use in a software development environment, as different 
-developers are able to focus their efforts on and progress in the 
-development of separate modules without relying on the progress of other 
-modules, substituting their inputs and output with mock objects where 
-necessary.\\
-
-The layers used within the PowerCloud system are as follows:\\
-
-	\begin{enumerate}
-		\item Client Interface Layer\\
-		The client interface layer contains the Particle device and web 
-		application. It serves as the point of entry into the system for 
-		users, represented by the Particle devices and human operators. 
-		The Particle devices communicate with the application server by 
-		using MQTT, whilst the human operators communicate operate with 
-		the web server via a web application, which uses HTTP.
-		\item Business Layer\\
-		The business layer is where data and requests received from the 
-		client interface layer are processed and responded to. It 
-		contains the application server, which communicates with the 
-		Particle devices, and the web server, which communicates with the 
-		human operators via the web application. The servers interact 
-		with the database mapping layer by passing storage and request 
-		objects, which serve as containers for the data to be transferred.
-		\item Database Mapping Layer
-		The database mapping layer is responsible for interfacing between 
-		the above business layer and the persistence layer below. It does 
-		this by converting requests from the business layer into requests 
-		which the persistence layer can understand and respond to. It 
-		contains the persistence handler module.
-		\item Persistence Layer\\
-		The persistence layer is responsible for completing requests from 
-		the database mapping layer. These requests can be in the form of 
-		either storing data into the database, or retrieving previously 
-		stored data. This layer currently contains the FireBase handler 
-		module. The persistence layer receives objects to be stored or 
-		retrieved from the database mapping layer, and then communicates 
-		the database, using HTTP in the case of FireBase.
-	\end{enumerate}
+	\subsection{The Layering Pattern}
+	
+	The primary pattern used within the PowerCloud system is the Layering 
+	Pattern. This pattern provides a number of benefits which encouraged its 
+	use. Firstly, due to the manner in which it is structured, the layering 
+	pattern separates different parts of the system implementation into 
+	layers. Each of these layers can easily be removed or replaced without 
+	effecting the implementation of other layers. This allows a great deal of 
+	modularity, as one layer can be swapped out for another, equivalent 
+	layer, allowing front- and back-end implementations to be changed as 
+	needed.\\
+	
+	A second advantage is in the manner in which the layering pattern handles 
+	communication between layers. Modules within a layer can only access the 
+	modules which are in the same layer, or the next layer below itself. In 
+	this way, communication between modules is restricted, such that the 
+	client layers would not be able to directly communicate with the 
+	persistence layers, which provides an added level of control, as well as 
+	a reduction in complexity in the communication between different 
+	modules.\\
+	
+	A third advantage provided by the layering pattern is that it allows each 
+	layer and module to be developed independently of one another, which is 
+	of great use in a software development environment, as different 
+	developers are able to focus their efforts on and progress in the 
+	development of separate modules without relying on the progress of other 
+	modules, substituting their inputs and output with mock objects where 
+	necessary.\\
+	
+	\noindent
+	The layers used within the PowerCloud system are as follows:\\
+	
+		\begin{enumerate}
+			\item Client Interface Layer\\
+			The client interface layer contains the Particle device and web 
+			application. It serves as the point of entry into the system for 
+			users, represented by the Particle devices and human operators. 
+			The Particle devices communicate with the application server by 
+			using MQTT, whilst the human operators communicate operate with 
+			the web server via a web application, which uses HTTP.
+			\item Business Layer\\
+			The business layer is where data and requests received from the 
+			client interface layer are processed and responded to. It 
+			contains the application server, which communicates with the 
+			Particle devices, and the web server, which communicates with the 
+			human operators via the web application. The servers interact 
+			with the database mapping layer by passing storage and request 
+			objects, which serve as containers for the data to be transferred.
+			\item Database Mapping Layer
+			The database mapping layer is responsible for interfacing between 
+			the above business layer and the persistence layer below. It does 
+			this by converting requests from the business layer into requests 
+			which the persistence layer can understand and respond to. It 
+			contains the persistence handler module.
+			\item Persistence Layer\\
+			The persistence layer is responsible for completing requests from 
+			the database mapping layer. These requests can be in the form of 
+			either storing data into the database, or retrieving previously 
+			stored data. This layer currently contains the FireBase handler 
+			module. The persistence layer receives objects to be stored or 
+			retrieved from the database mapping layer, and then communicates 
+			the database, using HTTP in the case of FireBase.
+		\end{enumerate}
 
 \newpage
 
