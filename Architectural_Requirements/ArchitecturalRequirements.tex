@@ -215,21 +215,21 @@ and architectural constraints.
 	application server listens for any incoming MQTT messages, and 
 	processes those which it receives.\\
 	
-	The application server communicates with a FireBase persistence 
+	The application server communicates with a Firebase persistence 
 	service using a Representational State Transfer (REsT) architecture, 
 	and as such communication uses the Hypertext Transfer Protocol 
 	(HTTP). This means that communication will rely on using HTTP verbs, 
 	such as POST and GET. The POST command is mainly used to send data to 
-	the FireBase service, such as when data needs to be stored in the 
-	FireBase database. The GET command is used to request data from the 
-	FireBase service, and is used when previously stored data needs to be 
+	the Firebase service, such as when data needs to be stored in the 
+	Firebase database. The GET command is used to request data from the 
+	Firebase service, and is used when previously stored data needs to be 
 	retrieved from the database.\\
 	
 	In order for operators to access the data which has been stored on 
-	the FireBase database, a web interface must be provided. For this 
-	reason, a web server is used to connect to FireBase and retrieve any 
+	the Firebase database, a web interface must be provided. For this 
+	reason, a web server is used to connect to Firebase and retrieve any 
 	needed data from the database. The web server will communicate with 
-	FireBase in the same manner as the application server, using HTTP. 
+	Firebase in the same manner as the application server, using HTTP. 
 	The web server will then process this data, and display it to the 
 	operators via a web page.\\
 	
@@ -259,7 +259,7 @@ and architectural constraints.
 	
 	The web application must be compatible with modern web browsers. As 
 	the web application will primarily be used to interact with the 
-	FireBase database, a working Internet connection will be required for 
+	Firebase database, a working Internet connection will be required for 
 	it to operate. The web application will be based on the REsT 
 	architecture, and will communicate using the HTTP protocol.\\
 	
@@ -348,23 +348,84 @@ and architectural constraints.
 			The persistence layer is responsible for completing requests from 
 			the database mapping layer. These requests can be in the form of 
 			either storing data into the database, or retrieving previously 
-			stored data. This layer currently contains the FireBase handler 
+			stored data. This layer currently contains the Firebase handler 
 			module. The persistence layer receives objects to be stored or 
 			retrieved from the database mapping layer, and then communicates 
-			the database, using HTTP in the case of FireBase.
+			the database, using HTTP in the case of Firebase.
 		\end{enumerate}
 
 \newpage
 
 \section{Architectural tactics and strategies}
 
+The following tactics are being used, or are planned to be implemented. Additional 
+tactics will need to be added to the project as further issues are identified.
+
+	\begin{itemize}
+		\item \textbf{Testing Framework}\\
+		Testing Frameworks provide continuous testing of code via unit testing, 
+		in order to reduce risks of system failure, provide rapid feedback on 
+		developed units, and improve the maintainability of the code.\\
+		
+		Within the PowerCloud system, code is tested using the JUnit and 
+		KarmaJS frameworks. The JUnit tests are integrated into the Maven 
+		build, whilst the KarmaJS tests will be integrated into Gulp.
+		
+		\item \textbf{Error/exception communication}\\
+		Error and exception communication allows faults to be caught and 
+		communicated throughout the system, such that they can be handled and 
+		recovered from.\\
+		
+		Within the PowerCloud system, potential problems are caught using 
+		either exceptions, which can be thrown and handled, or by using testing 
+		methods which return a value which indicates that an error or 
+		undesirable situation has occurred, alerting the system and allowing 
+		the required actions to be taken.
+		
+		\item \textbf{Message integrity}\\
+		Message integrity ensures that messages received within the system are 
+		in the correct format, and attempts to determine whether the contents 
+		within the messages have been changed in any way after being sent.\\
+		
+		Within the PowerCloud system, messages sent from the Particle device 
+		are checked once they have been received by the application server. At 
+		present, the checks ensure that the messages are in the correct JSON 
+		format. Once greater knowledge has been established of the measured 
+		appliance, the operators can set specific thresholds to define valid 
+		data.
+		
+		\item \textbf{Passive redundancy}\\
+		Passive redundancy can refer to redundancy systems which are set into 
+		place to recover from potential faults and failures. This can refer to 
+		both physical faults as well as data failures.\\
+		
+		The PowerCloud system makes use of the Firebase service for cloud 
+		storage purposes. The Firebase service provides redundancy services for 
+		their database services, ensuring that data is available at all times.
+
+		\item \textbf{Authentication}\\
+		Authentication refers to the security practise whereby attempts to gain 
+		access to secure resources or services requires the possession of both 
+		valid identification and the correct secret knowledge, such as a 
+		password.\\
+		
+		Within the PowerCloud system, only users with valid authentication 
+		credentials are able to access the data stored in the database. Users 
+		are required to log in to the web application before they are able to 
+		make use of its services.
+		
+		\item \textbf{Authorization}\\
+		Authorization refers to the security practise whereby an entity must be 
+		allowed access to resources based on whether they have permissions to 
+		access said resources.\\
+		
+		The PowerCloud system only allows authorized Particle devices to store 
+		information in the database, and user access privileges are determined 
+		based on authorisation privileges assigned on a per user basis via 
+		Firebase.
+	\end{itemize}
+
 \newpage
-
-%\section{Use of reference architectures and frameworks}
-
-
-
-%\newpage
 
 \section{Access and integration channels}
 	
@@ -399,10 +460,10 @@ and architectural constraints.
 	a lightweight addition to the TCP/IP protocol which allows for 
 	reliable communication whilst requiring limited network bandwidth.\\
 	
-	When communicating with the FireBase service, the REsT architecture 
+	When communicating with the Firebase service, the REsT architecture 
 	is used. This allows communication over TCP/IP using HTTP verbs, 
 	namely GET and POST in this case. GET is used to request data from 
-	the FireBase database, whilst POST is used to send data to the 
+	the Firebase database, whilst POST is used to send data to the 
 	service. The REsT API allows the use of these commands, and controls 
 	their usage.
 
@@ -449,11 +510,11 @@ and architectural constraints.
 	\subsection{Java Server}
 	
 	The application server is coded using Java. Java is chosen as it 
-	comes with a well established knowledgebase, and is a mature 
+	comes with a well established knowledge-base, and is a mature 
 	programming language which is readily supported. A Java server allows 
 	for the usage of multiple threads, and also provides automated 
 	garbage management services, amongst others. Java is also supported 
-	by the FireBase service.
+	by the Firebase service.
 	
 	\subsection{NodeJS}
 	
@@ -473,22 +534,22 @@ and architectural constraints.
 	without requiring a refresh by using AJAX. AngularJS uses two-way 
 	binding and update the virtual Document Object Model (DOM), which 
 	will be necessary within the web application. NodeJS is also well 
-	supported by FireBase.
+	supported by Firebase.
 	
-	\subsection{FireBase}
+	\subsection{Firebase}
 	
-	FireBase is a persistence provider. It is a document store cloud 
+	Firebase is a persistence provider. It is a document store cloud 
 	based database provider which stores data in a JavaScript Object 
 	Notation format. It is tailored to provide scalability on request, 
 	increasing the number of concurrent connections allowed with the 
 	proportion to the size of the data set. A database built on 
-	FireBase's infrastructure is accessible using their REsT API, as well 
+	Firebase's infrastructure is accessible using their REsT API, as well 
 	as through bindings for JavaScript frameworks, such as AngularJS. 
-	FireBase provides real-time data synchronisation, with the database 
-	immediately reflecting any changes across multiple clients. FireBase 
+	Firebase provides real-time data synchronisation, with the database 
+	immediately reflecting any changes across multiple clients. Firebase 
 	servers are located in many major city centres around the world, 
 	which allows optimal connection speeds , regardless of where it is 
-	accessed from. These characteristics make FireBase an ideal choice 
+	accessed from. These characteristics make Firebase an ideal choice 
 	for PowerCloud, which focuses on real-time cloud based database 
 	storage and access.
 	
