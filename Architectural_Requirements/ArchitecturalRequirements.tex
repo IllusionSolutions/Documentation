@@ -11,9 +11,6 @@
 	includefoot
 	]{geometry}
 
-%Images
-\usepackage{graphicx}
-
 \graphicspath{{images/}}
 
 %Headers and Footers
@@ -25,26 +22,52 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Title Page
-\title{Architecture Specification}
-\author
-{  
-	\\\\\\
-	Stuart Andrews, 12153983 
-	\\\\
-	NAME, XXXXXXXX
-	\\\\
-	NAME, XXXXXXXX 
-	\\\\
-	Brandon Wardley, 29005150 
-	\\\\\\\\\\\\\\
+%Details
+\title{
+	Architecture Specification
 }
+\author{Illusion Solutions}
 
+%Document start
 \begin{document}
-\maketitle
-\thispagestyle{empty}
+	
+	%Title Page
+	\newgeometry{top=4.5cm}
+	\begin{titlepage}
+		\begin{center}
+			\line(1,0){300} \\
+			[0.1cm]
+			\textsc{\Huge
+				PowerCloud\\
+				Architecture Specification
+			} \\
+			[0.1cm]
+			\line(1,0){300} \\
+			[2.0cm]
+			\textsc{\Large
+				Illusion Solutions
+			} \\
+			[3.5cm]
+			
+		\end{center}
+		\begin{flushright}
+			\textsc{\Large
+				Stuart Andrews\\ 
+				12153983\\
+				Marc Antel\\
+				12026973\\
+				Mothusi Masibi\\
+				12004589\\
+				Brandon Wardley\\
+				29005150\\
+			}
+		\end{flushright}
+	\end{titlepage}
+
 \newpage
+\restoregeometry
 \tableofcontents
+\thispagestyle{empty}
 
 \newpage
 
