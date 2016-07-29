@@ -50,64 +50,112 @@
 
 \section{Architecture requirements}
 
-This section contains a brief discussion of the software requirements of the PowerCloud system. It includes the architectural scope, the quality requirements, the integration requirements, access channel requirements, and architectural constraints.
+This section contains a brief discussion of the software requirements of 
+the PowerCloud system. It includes the architectural scope, the quality 
+requirements, the integration requirements, access channel requirements, 
+and architectural constraints.
 
 	\subsection{Architectural scope}
 	
-	The software architecture used within the PowerCloud system must satisfy certain requirements brought forward by the client. These requirements need to be satisfied in order to ensure the system provides a satisfactory level of performance. The requirements are as follows:
+	The software architecture used within the PowerCloud system must 
+	satisfy certain requirements brought forward by the client. These 
+	requirements need to be satisfied in order to ensure the system 
+	provides a satisfactory level of performance. The requirements are as 
+	follows:
 
 	\begin{itemize}
-		\item The system must provide a reliable persistence service which stores data in a readable format. This data must be easily maintainable.
-		\item The system must be secure. Only authorised users should be able to access and use the system. This includes both human operators and Particle devices. Data sent within the system must be secure, and should not be accessible by outside parties.
-		\item The system must provide reporting functionality. Stored data must be represented to the user in an understandable manner. This representation must be useful to the user, and provide additional understanding of the data as a whole, via the use of valid statistics.
-		\item The system must provide reliability, such that the data sent and retrieved is both accurate and consistent. The system, and devices within the system, must recover gracefully if a failure does occur. If a part of the system fails, data should not be lost.
-		\item The system must be able to cater to a large number of users, and no user should experience a noticeable lack in performance due to contention. This includes both human operators and Particle devices.
-		\item The system should be easy to use, such that operators can easily access the required data, and that devices within the system be easy to configure and use.
-		\item The system must provide compatibility, such that the data can be accessed from any computer which meets the minimum requirements.
+		\item The system must provide a reliable persistence service 
+		which stores data in a readable format. This data must be easily 
+		maintainable.
+		\item The system must be secure. Only authorised users should be 
+		able to access and use the system. This includes both human 
+		operators and Particle devices. Data sent within the system must 
+		be secure, and should not be accessible by outside parties.
+		\item The system must provide reporting functionality. Stored 
+		data must be represented to the user in an understandable manner. 
+		This representation must be useful to the user, and provide 
+		additional understanding of the data as a whole, via the use of 
+		valid statistics.
+		\item The system must provide reliability, such that the data 
+		sent and retrieved is both accurate and consistent. The system, 
+		and devices within the system, must recover gracefully if a 
+		failure does occur. If a part of the system fails, data should 
+		not be lost.
+		\item The system must be able to cater to a large number of 
+		users, and no user should experience a noticeable lack in 
+		performance due to contention. This includes both human operators 
+		and Particle devices.
+		\item The system should be easy to use, such that operators can 
+		easily access the required data, and that devices within the 
+		system be easy to configure and use.
+		\item The system must provide compatibility, such that the data 
+		can be accessed from any computer which meets the minimum 
+		requirements.
 	\end{itemize}
 	
 	\newpage
 
 	\subsection{Quality requirements}
 	
-	The following quality requirements were established, and were found to be relevant to the PowerCloud system. These requirements should be quantifiable and testable, and are listed in order of priority.
+	The following quality requirements were established, and were found 
+	to be relevant to the PowerCloud system. These requirements should be 
+	quantifiable and testable, and are listed in order of priority.
 	
 	\begin{enumerate}
 		\item Recoverability
 			\begin{itemize}
-				\item If a device goes offline, data should not lost for a given period, determined by the frequency at which measurements are taken.
-				\item If a server were to cease operation, a replacement must be provided as soon as possible, in order to minimize impact on user operations.
+				\item If a device goes offline, data should not lost for 
+				a given period, determined by the frequency at which 
+				measurements are taken.
+				\item If a server were to cease operation, a replacement 
+				must be provided as soon as possible, in order to 
+				minimize impact on user operations.
 			\end{itemize}
 		\item Quality
 			\begin{itemize}
-				\item The server needs to ensure that data is in a valid format.
-				\item The server needs to ensure that data is consistent, and if any deviations occur, the operators must be notified.
+				\item The server needs to ensure that data is in a valid 
+				format.
+				\item The server needs to ensure that data is consistent, 
+				and if any deviations occur, the operators must be 
+				notified.
 			\end{itemize}
 		\item Reliability
 			\begin{itemize}
-				\item Data measured by the devices must be accurate, up to a given level specified by the operator.
-				\item The server must ensure a 99.8\% uptime, outside of regular maintenance periods.
+				\item Data measured by the devices must be accurate, up 
+				to a given level specified by the operator.
+				\item The server must ensure a 99.8\% uptime, outside of 
+				regular maintenance periods.
 			\end{itemize}
 		\item Security
 			\begin{itemize}
-				\item Device communication must be encrypted to avoid interception of sensitive data.
-				\item Unauthorized operators and devices must not be able to access the system.
+				\item Device communication must be encrypted to avoid 
+				interception of sensitive data.
+				\item Unauthorized operators and devices must not be able 
+				to access the system.
 			\end{itemize}
 		\item Usability
 			\begin{itemize}
-				\item The PowerCloud web interface must be intuitive and easy to use.
-				\item Feedback must be provided to users after actions are performed, informing them as to the result of the action.
-				\item If an error should occur, the user must be made aware of the error.
-				\item Operation guidelines must be provided, to ensure the user can properly operate the system.
+				\item The PowerCloud web interface must be intuitive and 
+				easy to use.
+				\item Feedback must be provided to users after actions 
+				are performed, informing them as to the result of the 
+				action.
+				\item If an error should occur, the user must be made 
+				aware of the error.
+				\item Operation guidelines must be provided, to ensure 
+				the user can properly operate the system.
 			\end{itemize}
 		\item Scalability
 			\begin{itemize}
-				\item The server needs to handle up to 100 000 simultaneous connections from deployed devices.
+				\item The server needs to handle up to 100 000 
+				simultaneous connections from deployed devices.
 			\end{itemize}
 		\item Maintainability
 			\begin{itemize}
-				\item Any upgrades to the system must not change the contents in the database.
-				\item A module within the system can be changed without affecting any of the other modules.
+				\item Any upgrades to the system must not change the 
+				contents in the database.
+				\item A module within the system can be changed without 
+				affecting any of the other modules.
 			\end{itemize}
 	\end{enumerate}
 	
@@ -115,57 +163,156 @@ This section contains a brief discussion of the software requirements of the Pow
 	
 	\subsection{Integration requirements}
 	
-	The first stage in the PowerCloud system uses the Particle device. The device is made up of two separate devices, one of which is responsible for taking readings from a desired appliance, and another which accepts these values and transfers them to an application server. The two devices communicate with one another using a Serial Peripheral Interface (SPI), which controls the transfer of data between the two devices.\\
+	The first stage in the PowerCloud system uses the Particle device. 
+	The device is made up of two separate devices, one of which is 
+	responsible for taking readings from a desired appliance, and another 
+	which accepts these values and transfers them to an application 
+	server. The two devices communicate with one another using a Serial 
+	Peripheral Interface (SPI), which controls the transfer of data 
+	between the two devices.\\
 	
-	The second device, or the Photon, sends the readings to the application server by using MQ Telemetry Transport (MQTT), which is a publish-subscribe messaging protocol which is used on top of the TCP/IP protocol. Using MQTT, the Photon publishes data to the application server in a JavaScript Object Notation (JSON) format. The application server listens for any incoming MQTT messages, and processes those which it receives.\\
+	The second device, or the Photon, sends the readings to the 
+	application server by using MQ Telemetry Transport (MQTT), which is a 
+	publish-subscribe messaging protocol which is used on top of the 
+	TCP/IP protocol. Using MQTT, the Photon publishes data to the 
+	application server in a JavaScript Object Notation (JSON) format. The 
+	application server listens for any incoming MQTT messages, and 
+	processes those which it receives.\\
 	
-	The application server communicates with a FireBase persistence service using a Representational State Transfer (REsT) architecture, and as such communication uses the Hypertext Transfer Protocol (HTTP). This means that communication will rely on using HTTP verbs, such as POST and GET. The POST command is mainly used to send data to the FireBase service, such as when data needs to be stored in the FireBase database. The GET command is used to request data from the FireBase service, and is used when previously stored data needs to be retrieved from the database.\\
+	The application server communicates with a FireBase persistence 
+	service using a Representational State Transfer (REsT) architecture, 
+	and as such communication uses the Hypertext Transfer Protocol 
+	(HTTP). This means that communication will rely on using HTTP verbs, 
+	such as POST and GET. The POST command is mainly used to send data to 
+	the FireBase service, such as when data needs to be stored in the 
+	FireBase database. The GET command is used to request data from the 
+	FireBase service, and is used when previously stored data needs to be 
+	retrieved from the database.\\
 	
-	In order for operators to access the data which has been stored on the FireBase database, a web interface must be provided. For this reason, a web server is used to connect to FireBase and retrieve any needed data from the database. The web server will communicate with FireBase in the same manner as the application server, using HTTP. The web server will then process this data, and display it to the operators via a web page.\\
+	In order for operators to access the data which has been stored on 
+	the FireBase database, a web interface must be provided. For this 
+	reason, a web server is used to connect to FireBase and retrieve any 
+	needed data from the database. The web server will communicate with 
+	FireBase in the same manner as the application server, using HTTP. 
+	The web server will then process this data, and display it to the 
+	operators via a web page.\\
 	
-	It is important to take note that each of these systems have certain quality requirements which they must provide for. Reliable communication must be provided, which will ensure that data is not lost in transmission, or otherwise altered. Security must be provided when transporting data over the public domain, to ensure that said data is not accessed by unauthorized entities.
+	It is important to take note that each of these systems have certain 
+	quality requirements which they must provide for. Reliable 
+	communication must be provided, which will ensure that data is not 
+	lost in transmission, or otherwise altered. Security must be provided 
+	when transporting data over the public domain, to ensure that said 
+	data is not accessed by unauthorized entities.
 	
 	\newpage
 	
 	\subsection{Access channel requirements}
 	
-	Users, in the form of operators, will need to access the system to perform a number of tasks. The primary task will be to interact with and access data stored on the database. Additional tasks may include adding new devices to the system, or changing information relating to devices already on the system. In order to perform these tasks, a web application must be provided. This web application is provided by the web server. It is necessary that the web application must be easy to use and navigate, and must clearly display any and all required information. The web application must also provide feedback to users in a timely manner, such that they are made aware of the results of their actions, or of any alerts or notifications that may require their attention.\\
+	Users, in the form of operators, will need to access the system to 
+	perform a number of tasks. The primary task will be to interact with 
+	and access data stored on the database. Additional tasks may include 
+	adding new devices to the system, or changing information relating to 
+	devices already on the system. In order to perform these tasks, a web 
+	application must be provided. This web application is provided by the 
+	web server. It is necessary that the web application must be easy to 
+	use and navigate, and must clearly display any and all required 
+	information. The web application must also provide feedback to users 
+	in a timely manner, such that they are made aware of the results of 
+	their actions, or of any alerts or notifications that may require 
+	their attention.\\
 	
-	The web application must be compatible with modern web browsers. As the web application will primarily be used to interact with the FireBase database, a working Internet connection will be required for it to operate. The web application will be based on the REsT architecture, and will communicate using the HTTP protocol.\\
+	The web application must be compatible with modern web browsers. As 
+	the web application will primarily be used to interact with the 
+	FireBase database, a working Internet connection will be required for 
+	it to operate. The web application will be based on the REsT 
+	architecture, and will communicate using the HTTP protocol.\\
 	
-	Another access channel that must be mentioned is the interaction between the device and the appliance which it is measuring. An electrical lead is used to attach the appliance to the device, as well as to power it from a power source. In order for the correct operations to occur, and to ensure the safety of both the device and nearby operators, it is required that the appliance plug and source both be correctly wired, as an incorrectly wired plug can cause damage to both the device and potential operators.
+	Another access channel that must be mentioned is the interaction 
+	between the device and the appliance which it is measuring. An 
+	electrical lead is used to attach the appliance to the device, as 
+	well as to power it from a power source. In order for the correct 
+	operations to occur, and to ensure the safety of both the device and 
+	nearby operators, it is required that the appliance plug and source 
+	both be correctly wired, as an incorrectly wired plug can cause 
+	damage to both the device and potential operators.
 	
 	\subsection{Architectural constraints}
 	
-	The only major constraint in the PowerCloud system is that it requires the use of the Particle device, through which readings are taken and transmitted. This enforces the use of the following:\\
+	The only major constraint in the PowerCloud system is that it 
+	requires the use of the Particle device, through which readings are 
+	taken and transmitted. This enforces the use of the following:\\
 	
 	\noindent\textbf{Serial Peripheral Interface}\\
-	Communication between the two devices which make up the measuring device makes use of the Serial Peripheral Interface protocol.\\
+	Communication between the two devices which make up the measuring 
+	device makes use of the Serial Peripheral Interface protocol.\\
 	
 	\noindent\textbf{C++}\\
-	The Particle device requires that the firmware be coded in C++, using the Particle API.\\
+	The Particle device requires that the firmware be coded in C++, using 
+	the Particle API.\\
 
 \newpage
 
 \section{Architectural patterns and styles}
 
-The primary pattern used within the PowerCloud system is the Layering Pattern. This pattern provides a number of benefits which encouraged its use. Firstly, due to the manner in which it is structured, the layering pattern separates different parts of the system implementation into layers. Each of these layers can easily be removed or replaced without effecting the implementation of other layers. This allows a great deal of modularity, as one layer can be swapped out for another, equivalent layer, allowing front- and back-end implementations to be changed as needed.\\
+The primary pattern used within the PowerCloud system is the Layering 
+Pattern. This pattern provides a number of benefits which encouraged its 
+use. Firstly, due to the manner in which it is structured, the layering 
+pattern separates different parts of the system implementation into 
+layers. Each of these layers can easily be removed or replaced without 
+effecting the implementation of other layers. This allows a great deal of 
+modularity, as one layer can be swapped out for another, equivalent 
+layer, allowing front- and back-end implementations to be changed as 
+needed.\\
 
-A second advantage is in the manner in which the layering pattern handles communication between layers. Modules within a layer can only access the modules which are in the same layer, or the next layer below itself. In this way, communication between modules is restricted, such that the client layers would not be able to directly communicate with the persistence layers, which provides an added level of control, as well as a reduction in complexity in the communication between different modules.\\
+A second advantage is in the manner in which the layering pattern handles 
+communication between layers. Modules within a layer can only access the 
+modules which are in the same layer, or the next layer below itself. In 
+this way, communication between modules is restricted, such that the 
+client layers would not be able to directly communicate with the 
+persistence layers, which provides an added level of control, as well as 
+a reduction in complexity in the communication between different 
+modules.\\
 
-A third advantage provided by the layering pattern is that it allows each layer and module to be developed independently of one another, which is of great use in a software development environment, as different developers are able to focus their efforts on and progress in the development of separate modules without relying on the progress of other modules, substituting their inputs and output with mock objects where necessary.\\
+A third advantage provided by the layering pattern is that it allows each 
+layer and module to be developed independently of one another, which is 
+of great use in a software development environment, as different 
+developers are able to focus their efforts on and progress in the 
+development of separate modules without relying on the progress of other 
+modules, substituting their inputs and output with mock objects where 
+necessary.\\
 
 The layers used within the PowerCloud system are as follows:\\
 
 	\begin{enumerate}
 		\item Client Interface Layer\\
-		The client interface layer contains the Particle device and web application. It serves as the point of entry into the system for users, represented by the Particle devices and human operators. The Particle devices communicate with the application server by using MQTT, whilst the human operators communicate operate with the web server via a web application, which uses HTTP.
+		The client interface layer contains the Particle device and web 
+		application. It serves as the point of entry into the system for 
+		users, represented by the Particle devices and human operators. 
+		The Particle devices communicate with the application server by 
+		using MQTT, whilst the human operators communicate operate with 
+		the web server via a web application, which uses HTTP.
 		\item Business Layer\\
-		The business layer is where data and requests received from the client interface layer are processed and responded to. It contains the application server, which communicates with the Particle devices, and the web server, which communicates with the human operators via the web application. The servers interact with the database mapping layer by passing storage and request objects, which serve as containers for the data to be transferred.
+		The business layer is where data and requests received from the 
+		client interface layer are processed and responded to. It 
+		contains the application server, which communicates with the 
+		Particle devices, and the web server, which communicates with the 
+		human operators via the web application. The servers interact 
+		with the database mapping layer by passing storage and request 
+		objects, which serve as containers for the data to be transferred.
 		\item Database Mapping Layer
-		The database mapping layer is responsible for interfacing between the above business layer and the persistence layer below. It does this by converting requests from the business layer into requests which the persistence layer can understand and respond to. It contains the persistence handler module.
+		The database mapping layer is responsible for interfacing between 
+		the above business layer and the persistence layer below. It does 
+		this by converting requests from the business layer into requests 
+		which the persistence layer can understand and respond to. It 
+		contains the persistence handler module.
 		\item Persistence Layer\\
-		The persistence layer is responsible for completing requests from the database mapping layer. These requests can be in the form of either storing data into the database, or retrieving previously stored data. This layer currently contains the FireBase handler module. The persistence layer receives objects to be stored or retrieved from the database mapping layer, and then communicates the database, using HTTP in the case of FireBase.
+		The persistence layer is responsible for completing requests from 
+		the database mapping layer. These requests can be in the form of 
+		either storing data into the database, or retrieving previously 
+		stored data. This layer currently contains the FireBase handler 
+		module. The persistence layer receives objects to be stored or 
+		retrieved from the database mapping layer, and then communicates 
+		the database, using HTTP in the case of FireBase.
 	\end{enumerate}
 
 \newpage
@@ -182,13 +329,43 @@ The layers used within the PowerCloud system are as follows:\\
 
 \section{Access and integration channels}
 	
-	As mentioned earlier, the PowerCloud system has two main access channels. The first access channel is in the form of a web application, whereby human users are able to interact with the system. The main forms of interaction for human users are the retrieval of information from the database by requesting various reports, the addition of new information into the database, namely the addition of new devices, and editing already stored information, namely the changing of a devices ID or status.\\
+	As mentioned earlier, the PowerCloud system has two main access 
+	channels. The first access channel is in the form of a web 
+	application, whereby human users are able to interact with the 
+	system. The main forms of interaction for human users are the 
+	retrieval of information from the database by requesting various 
+	reports, the addition of new information into the database, namely 
+	the addition of new devices, and editing already stored information, 
+	namely the changing of a devices ID or status.\\
 	
-	The web application is designed using Angular.js, HTML5 and Cascading Style Sheets (CSS). HTML is the accepted standard markup language used when creating web pages, and will allow the web application to run on a number of standard browsers. CSS will allow the presentation of the web pages to be customised in a modular and reusable manner, which is also stored separately from the actual content of the web page. Angular.js is a framework which is used to determine the layout and other functionality of web pages, with the potential of the addition of Asynchronous JavaScript and XML (AJAX) functionality. Angular.js is based on the Model-View-Control architecture.\\
+	The web application is designed using Angular.js, HTML5 and Cascading 
+	Style Sheets (CSS). HTML is the accepted standard markup language 
+	used when creating web pages, and will allow the web application to 
+	run on a number of standard browsers. CSS will allow the presentation 
+	of the web pages to be customised in a modular and reusable manner, 
+	which is also stored separately from the actual content of the web 
+	page. Angular.js is a framework which is used to determine the layout 
+	and other functionality of web pages, with the potential of the 
+	addition of Asynchronous JavaScript and XML (AJAX) functionality. 
+	Angular.js is based on the Model-View-Control architecture.\\
 	
-	The second main access channel is the Particle device, which is responsible for taking measurements from an attached appliance, and sending those measurements on to the application server. The Particle Photon communicates with the measuring device using the SPI protocol, where the measuring device is responsible for taking current and voltage readings from the appliance by using a current converter. The Photon itself is interacted with using its firmware and the Particle API. The Photon communicates with the application server using MQTT, a lightweight addition to the TCP/IP protocol which allows for reliable communication whilst requiring limited network bandwidth.\\
+	The second main access channel is the Particle device, which is 
+	responsible for taking measurements from an attached appliance, and 
+	sending those measurements on to the application server. The Particle 
+	Photon communicates with the measuring device using the SPI protocol, 
+	where the measuring device is responsible for taking current and 
+	voltage readings from the appliance by using a current converter. The 
+	Photon itself is interacted with using its firmware and the Particle 
+	API. The Photon communicates with the application server using MQTT, 
+	a lightweight addition to the TCP/IP protocol which allows for 
+	reliable communication whilst requiring limited network bandwidth.\\
 	
-	When communicating with the FireBase service, the REsT architecture is used. This allows communication over TCP/IP using HTTP verbs, namely GET and POST in this case. GET is used to request data from the FireBase database, whilst POST is used to send data to the service. The REsT API allows the use of these commands, and controls their usage.
+	When communicating with the FireBase service, the REsT architecture 
+	is used. This allows communication over TCP/IP using HTTP verbs, 
+	namely GET and POST in this case. GET is used to request data from 
+	the FireBase database, whilst POST is used to send data to the 
+	service. The REsT API allows the use of these commands, and controls 
+	their usage.
 
 \newpage
 
@@ -196,42 +373,105 @@ The layers used within the PowerCloud system are as follows:\\
 
 	\subsection{Serial Peripheral Interface}
 	
-	The Serial Peripheral Interface (SPI) protocol is used to send data between the measuring device and the Photon. SPI is used as a synchronous data bus, and uses separate lines for data transfer and the clock pulse, which ensures that both the receiving and transmitting ends are synchronised.\\
+	The Serial Peripheral Interface (SPI) protocol is used to send data 
+	between the measuring device and the Photon. SPI is used as a 
+	synchronous data bus, and uses separate lines for data transfer and 
+	the clock pulse, which ensures that both the receiving and 
+	transmitting ends are synchronised.\\
 	
 	\noindent
-	There are no alternatives to this technology, as its usage is specified by the client.
+	There are no alternatives to this technology, as its usage is 
+	specified by the client.
 	
 	\subsection{Particle Photon}
 	
-	The Photon is a compact hardware board which contains a number of built in components, such as a wi-fi module, light emitting diodes (LEDs), an Analogue to Digital Converter (ADC), to name a few. The Photon is interacted with using the Particle API, and its firmware is coded using C++. The Photon is used for data storage, as well as data transmission to the application server.\\
+	The Photon is a compact hardware board which contains a number of 
+	built in components, such as a wi-fi module, light emitting diodes 
+	(LEDs), an Analogue to Digital Converter (ADC), to name a few. The 
+	Photon is interacted with using the Particle API, and its firmware is 
+	coded using C++. The Photon is used for data storage, as well as data 
+	transmission to the application server.\\
 	
 	\noindent
-	There are no alternatives to this technology, as its usage is specified by the client.
+	There are no alternatives to this technology, as its usage is 
+	specified by the client.
 	
 	\subsection{MQ Telemetry Transport}
 	
-	MQTT is a lightweight messaging protocol which is used on top of the TCP/IP protocol. It is specially designed for usage in situations where a small code footprint is required, and limited bandwidth is available, which makes it suitable for usage within Internet of Things (IoT) projects such as PowerCloud. Additionally, it provides reliable communication, and allows for acknowledgement of successful data reception from the receiver, and retransmission upon delivery failure. MQTT functions using a publish/subscribe system.
+	MQTT is a lightweight messaging protocol which is used on top of the 
+	TCP/IP protocol. It is specially designed for usage in situations 
+	where a small code footprint is required, and limited bandwidth is 
+	available, which makes it suitable for usage within Internet of 
+	Things (IoT) projects such as PowerCloud. Additionally, it provides 
+	reliable communication, and allows for acknowledgement of successful 
+	data reception from the receiver, and retransmission upon delivery 
+	failure. MQTT functions using a publish/subscribe system.
 	
 	\subsection{Java Server}
 	
-	The application server is coded using Java. Java is chosen as it comes with a well established knowledgebase, and is a mature programming language which is readily supported. A Java server allows for the usage of multiple threads, and also provides automated garbage management services, amongst others. Java is also supported by the FireBase service.
+	The application server is coded using Java. Java is chosen as it 
+	comes with a well established knowledgebase, and is a mature 
+	programming language which is readily supported. A Java server allows 
+	for the usage of multiple threads, and also provides automated 
+	garbage management services, amongst others. Java is also supported 
+	by the FireBase service.
 	
 	\subsection{NodeJS}
 	
-	NodeJS is used to compile the web server. NodeJS is a run-time environment used for server-side web applications. It provides an event driven architecture that achieves asynchronous input and output capabilities. It allows for a  persistent connection to be maintained between the browser and the server, which is suitable for the PowerCloud system. Any changes made on the data set can immediately be propagated through the NodeJS server to the web application.
+	NodeJS is used to compile the web server. NodeJS is a run-time 
+	environment used for server-side web applications. It provides an 
+	event driven architecture that achieves asynchronous input and output 
+	capabilities. It allows for a  persistent connection to be maintained 
+	between the browser and the server, which is suitable for the 
+	PowerCloud system. Any changes made on the data set can immediately 
+	be propagated through the NodeJS server to the web application.
 	
 	\subsection{AngularJS}
 	
-	AngularJS will be used for the web application framework. It is a powerful and flexible framework which provides modularization with extensive module repositories, and allows real-time web page updates without requiring a refresh by using AJAX. AngularJS uses two-way binding and update the virtual Document Object Model (DOM), which will be necessary within the web application. NodeJS is also well supported by FireBase.
+	AngularJS will be used for the web application framework. It is a 
+	powerful and flexible framework which provides modularization with 
+	extensive module repositories, and allows real-time web page updates 
+	without requiring a refresh by using AJAX. AngularJS uses two-way 
+	binding and update the virtual Document Object Model (DOM), which 
+	will be necessary within the web application. NodeJS is also well 
+	supported by FireBase.
 	
 	\subsection{FireBase}
 	
-	FireBase is a persistence provider. It is a document store cloud based database provider which stores data in a JavaScript Object Notation format. It is tailored to provide scalability on request, increasing the number of concurrent connections allowed with the proportion to the size of the data set. A database built on FireBase's infrastructure is accessible using their REsT API, as well as through bindings for JavaScript frameworks, such as AngularJS. FireBase provides real-time data synchronisation, with the database immediately reflecting any changes across multiple clients. FireBase servers are located in many major city centres around the world, which allows optimal connection speeds , regardless of where it is accessed from. These characteristics make FireBase an ideal choice for PowerCloud, which focuses on real-time cloud based database storage and access.
+	FireBase is a persistence provider. It is a document store cloud 
+	based database provider which stores data in a JavaScript Object 
+	Notation format. It is tailored to provide scalability on request, 
+	increasing the number of concurrent connections allowed with the 
+	proportion to the size of the data set. A database built on 
+	FireBase's infrastructure is accessible using their REsT API, as well 
+	as through bindings for JavaScript frameworks, such as AngularJS. 
+	FireBase provides real-time data synchronisation, with the database 
+	immediately reflecting any changes across multiple clients. FireBase 
+	servers are located in many major city centres around the world, 
+	which allows optimal connection speeds , regardless of where it is 
+	accessed from. These characteristics make FireBase an ideal choice 
+	for PowerCloud, which focuses on real-time cloud based database 
+	storage and access.
 	
 	\subsection{JavaScript Object Notation}
 	
-	JavaScript Object Notation (JSON) is a lightweight data-interchange format which is easy to understand and manipulate. JSON is natively supported across various technologies, and can often be used in its raw form with no extra manipulation. This makes it ideal for use within the PowerCloud system.
+	JavaScript Object Notation (JSON) is a lightweight data-interchange 
+	format which is easy to understand and manipulate. JSON is natively 
+	supported across various technologies, and can often be used in its 
+	raw form with no extra manipulation. This makes it ideal for use 
+	within the PowerCloud system.
 	
-	\subsection{Reporting}
+	\subsection{HighCharts}
+	
+	HighCharts is a JavaScript library which allows the addition of 
+	interactive charts to a web application, with compatibility for most 
+	modern browsers. It supports a large variety of graphical data 
+	representations, and is free for non-commercial use. Being a pure 
+	JavaScript library, it is set to work well with AngularJS and the 
+	other chosen web application technologies. HighCharts provides 
+	dynamic charts, which can be changed even after the chart has been 
+	created, using event hooks. For these reasons, it is ideal for usage 
+	within the PowerCloud system, due to its ease of use and 
+	compatibility with previously chosen technologies. 
 
 \end{document}          
