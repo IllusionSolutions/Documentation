@@ -41,6 +41,7 @@
 				PowerCloud\\
 				Architecture Specification
 			} \\
+			\textsc{\large version 2.0}\\
 			[0.1cm]
 			\line(1,0){300} \\
 			[2.0cm]
@@ -199,13 +200,9 @@ and architectural constraints.
 	
 	\subsection{Integration requirements}
 	
-	The first stage in the PowerCloud system uses the Particle device. 
-	The device is made up of two separate devices, one of which is 
-	responsible for taking readings from a desired appliance, and another 
-	which accepts these values and transfers them to an application 
-	server. The two devices communicate with one another using a Serial 
-	Peripheral Interface (SPI), which controls the transfer of data 
-	between the two devices.\\
+	The first stage in the PowerCloud system is the measuring device itself. The device consists out of a number of components. The first is a power meter, responsible for taking readings from 
+	the connected appliance and sending these measurements on to the Photon. This is achieved by sending a pulse to an input pin on the Photon board, where every high pulse indicates a unit 
+	measured.\\
 	
 	The second device, or the Photon, sends the readings to the 
 	application server by using MQ Telemetry Transport (MQTT), which is a 
@@ -214,6 +211,16 @@ and architectural constraints.
 	application server in a JavaScript Object Notation (JSON) format. The 
 	application server listens for any incoming MQTT messages, and 
 	processes those which it receives.\\
+	
+	Additionally, the Photon also controls a relay, which controls 
+	whether the connected is one or off, by controlling the flow of 
+	current to the device. This is achieved by using one of the Photon 
+	pins as an output, which connects the the relay trigger. A high 
+	signal indicates that the relay is on, and the device has power, 
+	whilst a low signal indicates that the relay is off, and the device 
+	has no power. The relay can also be controlled via the web 
+	application, allowing the user to turn it on and off, via signals 
+	sent to the Photon device.\\
 	
 	The application server communicates with a Firebase persistence 
 	service using a Representational State Transfer (REsT) architecture, 
@@ -277,10 +284,6 @@ and architectural constraints.
 	The only major constraint in the PowerCloud system is that it 
 	requires the use of the Particle device, through which readings are 
 	taken and transmitted. This enforces the use of the following:\\
-	
-	\subsubsection{Serial Peripheral Interface}
-	Communication between the two devices which make up the measuring 
-	device makes use of the Serial Peripheral Interface protocol.\\
 	
 	\subsubsection{C++}
 	The Particle device requires that the firmware be coded in C++, using 
