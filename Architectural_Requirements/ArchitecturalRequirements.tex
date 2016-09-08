@@ -286,8 +286,11 @@ and architectural constraints.
 	taken and transmitted. This enforces the use of the following:\\
 	
 	\subsubsection{C++}
-	The Particle device requires that the firmware be coded in C++, using 
-	the Particle API.\\
+	The Particle device requires that the firmware be coded in C++.\\
+	
+	\subsection{Particle.io}
+	The Particle device requires the use of the Particle.io API to access 
+	much of the software and hardware functionality of the Photon board.
 
 \newpage
 
@@ -455,7 +458,7 @@ tactics will need to be added to the project as further issues are identified.
 	The second main access channel is the Particle device, which is 
 	responsible for taking measurements from an attached appliance, and 
 	sending those measurements on to the application server. The Particle 
-	Photon communicates with the measuring device using the SPI protocol, 
+	Photon communicates with the power meter using the an input pin on the Photon, 
 	where the measuring device is responsible for taking current and 
 	voltage readings from the appliance by using a current converter. The 
 	Photon itself is interacted with using its firmware and the Particle 
@@ -473,18 +476,6 @@ tactics will need to be added to the project as further issues are identified.
 \newpage
 
 \section{Technologies}
-
-	\subsection{Serial Peripheral Interface}
-	
-	The Serial Peripheral Interface (SPI) protocol is used to send data 
-	between the measuring device and the Photon. SPI is used as a 
-	synchronous data bus, and uses separate lines for data transfer and 
-	the clock pulse, which ensures that both the receiving and 
-	transmitting ends are synchronised.\\
-	
-	\noindent
-	There are no alternatives to this technology, as its usage is 
-	specified by the client.
 	
 	\subsection{Particle Photon}
 	
@@ -498,6 +489,16 @@ tactics will need to be added to the project as further issues are identified.
 	\noindent
 	There are no alternatives to this technology, as its usage is 
 	specified by the client.
+	
+	\subsection{Particle.io}
+	
+	Particle.io is used in the both the firmware for the Particle Photon as well as to provide functionality for the web application. The Particle.io API is used to control Photon 
+	functionality and hardware, and also includes a number of standard C++ classes. Additionally, Particle.io allows the usage of Particle cloud functionality, allowing functions and variables 
+	to be accessed via the Internet.\\
+	
+	\noindent
+	There are no alternatives to this technology, as its usage is specified by the client.
+	
 	
 	\subsection{MQ Telemetry Transport}
 	
