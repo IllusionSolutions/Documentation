@@ -222,20 +222,20 @@ includefoot
 		\begin{enumerate}
 			\item  Pre-Conditions
 			\begin{enumerate}
-				\item	Client must have a gmail account.
-				\item	Client must create their own Firebase account. i.e. powercloud-bf968.
-				\item	Client must set a password of length 6 and above.
+				\item	User must have a gmail account.
+				\item	User must create their own Firebase account. i.e. powercloud-bf968.
+				\item	User must set a password of length 6 and above.
 			\end{enumerate}
 			\item  Post-Conditions		
 			\begin{enumerate}
-				\item	Client can visit firebase.google.com and view their Firebase Database.
+				\item	User can visit firebase.google.com and view their Firebase Database.
 			\end{enumerate}
 		\end{enumerate}
 		\item	User Registration
 		\begin{enumerate}
 			\item  Pre-Conditions
 			\begin{enumerate}
-				\item	Client must register with:
+				\item	User must register with:
 				\begin{enumerate}
 					\item	namecompany name.
 					\item	email address.
@@ -252,21 +252,21 @@ includefoot
 		\begin{enumerate}
 			\item  Pre-Conditions
 			\begin{enumerate}
-				\item	Client must be registered.
-				\item	Client must login in with an email address or username, and password.
+				\item	User must be registered.
+				\item	User must login in with an email address or username, and password.
 			\end{enumerate}
 			\item  Post-Conditions		
 			\begin{enumerate}
-				\item	Client will have access to all devices, will be able to add and remove devices, and retrieve and observe data.
+				\item	User will have access to all devices, will be able to add and remove devices, and retrieve and observe data.
 			\end{enumerate}
 		\end{enumerate}
 		\item	User Add Device
 		\begin{enumerate}
 			\item  Pre-Conditions
 			\begin{enumerate}
-				\item	Client must be logged in.
-				\item	Client must have necessary authorisation.
-				\item	Client must provide the following details:
+				\item	User must be logged in.
+				\item	User must have necessary authorisation.
+				\item	User must provide the following details:
 				\begin{enumerate}
 					\item	Device id.
 					\item	Device appliance, i.e. the appliance who's value it will be reading.
@@ -282,15 +282,56 @@ includefoot
 		\begin{enumerate}
 			\item  Pre-Conditions
 			\begin{enumerate}
-				\item	Client must be logged in.
-				\item	Client must have necessary authorisation.
-				\item	Client must have devices listed, i.e. devices that have already been added.
+				\item	User must be logged in.
+				\item	User must have necessary authorisation.
+				\item	User must have devices listed, i.e. devices that have already been added.
 			\end{enumerate}
 			\item  Post-Conditions		
 			\begin{enumerate}
 				\item	Returns a JSON object from Firebase containing all the data concerning that specific device. Database.
 			\end{enumerate}
 		\end{enumerate}
+		\item	View Device
+		\begin{enumerate}
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	User must be logged in.
+				\item	User must have a list of devices available.
+				\item	User must be able to select "View Device" on a device.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Returns a page where the user may view data from that device, i.e. Power, Current, Cost and Carbon Emissions.
+			\end{enumerate}
+		\end{enumerate}
+		\item	Device Overview
+		\begin{enumerate}
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	User must be logged in.
+				\item	User must be on the "Overview" page.
+				\item	User must enter a date to begin searching from and a date to search to, and hit the search button.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Returns a page where the user may view data from all their devices, i.e. Power, Current, Cost and Carbon Emissions totalled per Devices and displayed in pi charts.
+			\end{enumerate}
+		\end{enumerate}
+		\item	Switch Device On/Off
+		\begin{enumerate}
+				\item  Pre-Conditions
+				\begin{enumerate}
+					\item	User must be logged in.
+					\item	User must view a device
+					\item	User must select the settings tab from the overhead bar.
+					\item	User must log into their Particle.io account.
+					\item	User can click the power button and turn their device on and off.
+				\end{enumerate}
+				\item  Post-Conditions		
+				\begin{enumerate}
+					\item	The device in question turns on and off as per the User's request.
+				\end{enumerate}
+			\end{enumerate}
 	\end{enumerate}
 	\newpage
 	\subsection{Process specifications}
