@@ -289,7 +289,7 @@ includefoot
 			\end{enumerate}
 			\item  Post-Conditions		
 			\begin{enumerate}
-				\item	Returns a JSON object from Firebase containing all the data concerning that specific device. Database.
+				\item	Returns a JSON object from Firebase containing all the data concerning that specific device.
 			\end{enumerate}
 		\end{enumerate}
 		\item	View Device
@@ -340,14 +340,19 @@ includefoot
 	\subsection{Process specifications}
 	\subsubsection{Store Process}
 	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/Store.jpg}
+		\includegraphics[width=\textwidth]{images/storeData.jpg}
 		\caption{Process specification for store \label{overflow}}
 	\end{figure}
-	\subsubsection{Retrieve Process}
+	\subsubsection{Retrieve All Data Process}
 	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/Retrieve.jpg}
-		\caption{Process specification for retrieve \label{overflow}}
+		\includegraphics[width=\textwidth]{images/retrieveAllData.jpg}
+		\caption{Process specification for retrieve all device data in a interval \label{overflow}}
 	\end{figure}
+		\subsubsection{Retrieve Data Process}
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/retrieveData.jpg}
+			\caption{Process specification for retrieve a specific devices data \label{overflow}}
+		\end{figure}
 	\subsection{Domain Model}
 	\begin{figure}[H]
 		\includegraphics[scale=0.7]{images/Domain Model.jpg}
