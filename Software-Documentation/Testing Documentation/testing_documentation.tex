@@ -18,7 +18,7 @@
 	\maketitle
 	\newpage
 	
-	\section{Introducation}
+	\section{Introduction}
 	PowerCloud is an IoT project intended to supply electrical usage data to large companies and 
 	households. A PowerCloud device accurately measures the electrical consumption of rooms, offices and 
 	large machinery in order to provide analytics, predictions and reduce costs associated with electricity 
@@ -37,9 +37,7 @@
 		and the risks involved in the testing approaches 
 		that will be followed. Assumptions and
 		dependencies of this test plan will also be 
-		mentioned. Section 7.1, 7.1 and 9 outlines,
-		discusses and concludes on the results of the 
-		tests, respectively.
+		mentioned.
 		
 		\subsection{Test Environment}
 		\begin{itemize}
@@ -109,14 +107,14 @@
 		\textbf{Store to EEPROM using raw values.}
 		\begin{enumerate}
 			\item Declare raw values which need to be stored.
-			\item Attempt to store these accpetable values.
+			\item Attempt to store these acceptable values.
 			\item Retrieve data from EEPROM and verify that it is correct. 
 		\end{enumerate}
 		\textbf{Retrieve from EEPROM.}
 		\begin{enumerate}
 			\item Create multiple struct objects.
 			\item Store these struct objects to EEPROM.
-			\item Attempt to retreive stored objects.
+			\item Attempt to retrieve stored objects.
 			\item Verify that the objects are correct.
 			\item Clear Memory.
 			\item Attempt to retrieve objects again.
@@ -135,7 +133,7 @@
 		\begin{enumerate}
 			\item Provide incorrect host IP.
 			\item Attempt to connect.
-			\item Proivde correct host IP.
+			\item Provide correct host IP.
 			\item Attempt to connect.
 		\end{enumerate}
 		\textbf{MQTT publish, which publishes JSON to the server.}
@@ -166,7 +164,7 @@
 		\textbf{Store data to Firebase.}
 		\begin{enumerate}
 			\item Receive a continuous stream of messages from MQTT Clients.
-			\item Attempt to store all messages to firebase.
+			\item Attempt to store all messages to Firebase.
 			\item Verify that all messages are present.
 			\item Receive a continuous stream of messages with a 10 second delay.
 			\item Attempt to store messages to Firebase.
@@ -188,48 +186,48 @@
 				\item Test non-ideal user registration: Simple password should fail registration.
 				Emails with non-FQTLDs: "temp@co" should fail registration.
 			\end{enumerate}
-		\textbf{Retreive intial dashboard data}
+		\textbf{Retrieve initial dashboard data}
 			\begin{enumerate}
 				\item Verify Firebase object exists in controller.
 				\item Verify correct promise received from Firebase.
-				\item Retreive all data from all devices.
+				\item Retrieve all data from all devices.
 				\item Calculated averages, totals and carbon footprint values are accurate.
 			\end{enumerate}
-		\textbf{Retreive list of devices}
+		\textbf{Retrieve list of devices}
 			\begin{enumerate}
 				\item Verify Firebase object exists in controller.
 				\item Verify correct promise received from Firebase.
-				\item Retreive all device meta details.
+				\item Retrieve all device meta details.
 			\end{enumerate}
-		\textbf{Retreive device specific data}
+		\textbf{Retrieve device specific data}
 			\begin{enumerate}
 				\item Verify Firebase object exists in controller.
 				\item Verify correct promise received from Firebase.
-				\item Retreive all data for device based on device ID.
+				\item Retrieve all data for device based on device ID.
 			\end{enumerate}
-		\textbf{Retreive data from date range}
+		\textbf{Retrieve data from date range}
 			\begin{enumerate}
 				\item Verify Firebase object exists in controller.
 				\item Verify correct promise received from Firebase.
-				\item Retreive all data for device based on device ID.
+				\item Retrieve all data for device based on device ID.
 			\end{enumerate}
 	
 	\section{Other}
 		\subsection{Test Incident Report}
 		\subsubsection{Firmware}
-		The following incidents occured during firmware testing. Namely during:
+		The following incidents occurred during firmware testing. Namely during:
 		\textbf{Testing the connect and publish:}
 		\begin{enumerate}
-			\item Particle Photon disconnects from WIFI after concurrent publish events.
+			\item Particle Photon disconnects from WiFi after concurrent publish events.
 			\item Particle Photon does not continue publishing after disconnecting.
 		\end{enumerate}
 		\textbf{Testing the EEPROM}
-		No incidents occured with regards to testing the EEPROM.
+		No incidents occurred with regards to testing the EEPROM.
 		\subsubsection{Application Server}
-		The following incidents occured during application server testing. Namely during:
+		The following incidents occurred during application server testing. Namely during:
 		\textbf{Storing to Firebase}
 		\begin{enumerate}
-			\item When receiving continous messages from clients, some messages are not stored to Firebase.
+			\item When receiving continuous messages from clients, some messages are not stored to Firebase.
 		\end{enumerate}
 	
 	\section{Conclusions \& Recommendations}
@@ -251,9 +249,9 @@
 	\begin{itemize}
 		\item Test whether messages received from clients contain the correct data.
 		\item Attempt to store malformed JSON to Firebase.
-		\item Test store methods using parameterized test.
-		\item Test \textit{checkMonth()} with parameterized tests.
-		\item Test \textit{validateID()} using parameterized tests.
+		\item Test store methods using parametrized test.
+		\item Test \textit{checkMonth()} with parametrized tests.
+		\item Test \textit{validateID()} using parametrized tests.
 		\item Test appropriate exceptions which are included within the exceptions package.
 	\end{itemize}
 	
