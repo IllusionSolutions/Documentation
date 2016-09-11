@@ -33,11 +33,14 @@
 			\end{itemize}
 			
 		\subsection{Firmware}
-			Compile and flash the photon with the following commands, please take note that if you run the application server on a local machine, retrieve the IP address and insert it into the firmware's code as shown below.\\
+			Compile and flash the photon with the following commands, please take note 
+			that if you run the application server on a local machine, retrieve the IP 
+			address and insert it into the firmware's code as shown below.\\
 			
-				\includegraphics[scale=0.5]{firmware.png}
+				\includegraphics[scale=0.5]{images/firmware.png}
 
-			Follow the instructions here in order to compile the firmware using Particle Dev.
+			Follow the instructions here in order to compile the firmware using Particle 
+			Dev.
 			\\
 			\begin{itemize}
 				\item Open the firmware using Particle Dev.
@@ -49,7 +52,9 @@
 			\textit{If you run into errors, please see the troubleshooting guide at the end of this document.}
 			
 		\subsection{Application Server}
-			Currently, the \textit{application-server} branch hosts the source code for the Application Server. It needs to be compiled using maven and run on a device which doesn't block incoming and outgoing connections on port 1883.\\
+			Currently, the \textit{application-server} branch hosts the source code for 
+			the Application Server. It needs to be compiled using maven and run on a 
+			device which doesn't block incoming and outgoing connections on port 1883.\\
 			
 			\textbf{Compiling the Application Server}\\
 			Download the sources from GitHub and compile:\\
@@ -59,6 +64,33 @@
 			\end{itemize}		
 				
 			\textit{If you run into errors, please see the troubleshooting guide at the end of this document.}
+						\newpage
+			\subsection{Web Application}
+			Once the web app has been served, see below for \textit{gulp serve}, the web
+			app may be run by typing localhost:9000 into a browser.
+				\begin{figure}[H]
+						\includegraphics[scale=0.3]{images/login.png}
+				\end{figure}
+				
+				\begin{figure}[H]
+							\includegraphics[scale=0.3]{images/login2.png}
+				\end{figure}
+				
+				\begin{figure}[H]
+							\includegraphics[scale=0.3]{images/profile.png}
+				\end{figure}
+				
+				\begin{figure}[H]
+							\includegraphics[scale=0.3]{images/view.png}
+				\end{figure}
+				
+				\begin{figure}[H]
+							\includegraphics[scale=0.3]{images/settings1.png}
+				\end{figure}
+				
+				\begin{figure}[H]
+							\includegraphics[scale=0.3]{images/settings.png}
+				\end{figure}
 			
 			\newpage
 	\section{Starting PowerCloud}
