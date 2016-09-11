@@ -288,7 +288,7 @@ and architectural constraints.
 	\subsubsection{C++}
 	The Particle device requires that the firmware be coded in C++.\\
 	
-	\subsection{Particle.io}
+	\subsubsection{Particle.io}
 	The Particle device requires the use of the Particle.io API to access 
 	much of the software and hardware functionality of the Photon board.
 
@@ -433,6 +433,82 @@ tactics will need to be added to the project as further issues are identified.
 	\end{itemize}
 
 \newpage
+
+\section{Use of reference architectures}
+
+	One of the major facets of the PowerCloud system is that it is an 
+	Internet of Things (IoT) project. Being a relatively new development 
+	within the computing world, there is a shortage of mature, well 
+	defined architectures which centre around IoT, compared to other 
+	branches of software development. Reference architectures are, 
+	however, present and maturing, as the focus on and interest 
+	surrounding IoT development continues to grow.
+	
+	\subsection{Reference IoT Layered Architecture}
+	
+		The Reference IoT Layered Architecture (RILA) is one such 
+		developing architecture for use within IoT systems. Based on 
+		high-level architectures which had previously been developed by 
+		the Internet of Things Architecture (IoT-A) project, the RILA 
+		architecture seeks to simplify abstract high-level architectures 
+		into a form that is easier to understand and apply within a 
+		system. The RILA architecture separates a system into a number of 
+		layers, each of which only have access to the information within 
+		their own layer or the information directly below it. Each of 
+		these layers represent a part of the IoT system, and separate and 
+		contain the various responsibilities within the system. The 
+		layers are as follows.
+		
+		\begin{enumerate}
+			\item Application Integration\\
+			The application integration layer represents the channel 
+			whereby the user has access to the IoT system. This includes 
+			any applications whereby the user can access the system, such 
+			as user interfaces, web services, or more complex 
+			applications.
+			\item Thing Integration\\
+			The thing integration layer is responsible for the detection 
+			of other IoT devices and services, and integrating them with 
+			one another. This is achieved by establishing whether the 
+			devices can possibly communicate with one another, and, if 
+			possible, the sharing of scenarios and attached goals between 
+			devices where applicable.
+			\item Context Management\\
+			The context management layer is responsible for containing 
+			the business logic within the system. It controls the defined 
+			goals of attached devices, as well as the various known 
+			scenarios in which they operate and how they can achieve 
+			those goals within those scenarios.
+			\item Data Management\\
+			The data management layer represents the persistence 
+			services, or database, which is responsible for storing all 
+			the data of attached devices.
+			\item Device Management\\
+			The device management layer is responsible for controlling 
+			the registration of connected devices, as well as accepting 
+			sensor measurements from the device integration layer. 
+			Additionally, it is responsible for conveying status changes 
+			in attached components received from the layers above itself 
+			to the integration layer below it.
+			\item Device Integration\\
+			The device integration layer is responsible for providing 
+			interconnectivity between between different device types, as 
+			well as handling the measurements of the attached devices. It 
+			functions as a translator, ensuring that a wide variety of 
+			devices and attached components can successfully communicate 
+			within a system.
+		\end{enumerate}
+		
+	The reason why the RILA architecture was chosen is due to the fact 
+	that it resembles the layered pattern which was initially chosen for 
+	the PowerCloud system. It provides a number of solutions to problems 
+	one might expect within an IoT system, and the separation of 
+	responsibilities in different layers would allow branched development 
+	within the team, without relying on the development of other layers. 
+	Because the RILA architecture is designed for use in large IoT 
+	systems with many difference devices, some of the layers and provided 
+	functions are not suitable for use, or required, within the 
+	PowerCloud system, at this point in its development.
 
 \section{Access and integration channels}
 	
