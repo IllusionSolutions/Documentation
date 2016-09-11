@@ -17,84 +17,136 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\section{Test Plan}
-		\subsection{Firmware}
-			We're using Manual Testing to test the firmware due to the fact that the firmware has to be compiled using the Particle Cloud.
-			
-			However, in due course, we intend to find a workaround in order to test the firmware using a testing framework.
-			
-			The following features of the firmware are tested:
-			\begin{itemize}
-				\item Store to EEPROM using a struct.
-				\item Store to EEPROM using raw values.
-				\item Retrieve from EEPROM.
-				\item Check EEPROM for data.
-				\item MQTT connect, which establishes a reliable connection to the server.
-				\item MQTT publish, which publishes JSON to the server.
-			\end{itemize}
-			
-		\subsection{Application Server}
-			We're using \textbf{JUnit} to test the major features of our application server.
-			Detailed descriptions of these features are as follows:
-				\begin{itemize}
-					\item Concurrent MQTT Client Connections.
-					\item Validate Data from Client.
-					\item Store data to Firebase.
-				\end{itemize}
+	
+	\section{Introducation}
+	PowerCloud is an IoT project intended to supply electrical usage data to large companies and 
+	households. A PowerCloud device accurately measures the electrical consumption of rooms, offices and 
+	large machinery in order to provide analytics, predictions and reduce costs associated with electricity 
+	usage.
+	
+		\subsection{Purpose}
+		This document provides unit test plans, results and a final report into one coherent document which can be used to analyse the current system status, this includes but is not limited to the test procedure, functional test cases, test results, conclusions and recommendations.
+		
+		\subsection{Scope}
+		The scope of this document is structured as 
+		follows. The features that are considered for
+		testing are listed in section 3, tests that have 
+		been identified from the requirements are
+		discussed in detail in section 4.\\\\Furthermore, 
+		this document outlines the test environment
+		and the risks involved in the testing approaches 
+		that will be followed. Assumptions and
+		dependencies of this test plan will also be 
+		mentioned. Section 7.1, 7.1 and 9 outlines,
+		discusses and concludes on the results of the 
+		tests, respectively.
+		
+		\subsection{Test Environment}
+		\begin{itemize}
+			\item \textbf{Programming Languages:}
+				\begin{flushleft}
+					\textit{
+					• JAVA v1.8\\
+					• C++\\
+					• Javascript\\
+					• HTML\\
+					• LESS\\}
+				\end{flushleft}
 				
-	\section{Test Design}
-	The tests were implemented as follows for each of the components of the entire system.
-	\subsection{Test Procedure Description}
-		\subsubsection{Firmware}
+			\item\textbf{Testing Frameworks:}
+				\begin{flushleft}
+					\textit{• JUnit\\
+					• Karma \& Jasmine\\
+						}
+				\end{flushleft}
+				
+			\item\textbf{Coding Environment:}
+			\begin{flushleft}
+				\textit{• Firmware: Atom + ParticleDev Plugin\\
+					• Application Server: IntelliJ IDEA\\
+					• Web Application: WebStorm\\}
+			\end{flushleft}
+			
+			\item\textbf{Operating System:}
+			\begin{flushleft}
+				\textit{• KALI Linux x64 2016\\
+					• Windows 10 x64}
+			\end{flushleft}
+			\item\textbf{Internet Browsers:}
+			\begin{flushleft}
+				\textit{• Chrome Browser for Windows x64\\
+					• Chrome Browser for Debian x64}
+			\end{flushleft}
+		\end{itemize}
+		
+		\subsection{Assumptions \& Dependencies}
+		The following dependencies are required to reproduce tests:
+		\begin{itemize}
+			\item \textbf{JUnit} Test Suite
+			\item \textbf{GCC Compiler}
+			\item \textbf{KarmaJS:} Installed globally via NPM
+			\item \textbf{GulpJS:} Installed globally via NPM
+			\item \textbf{Particle.io} Account
+		\end{itemize}
+		The following assumptions have been made:
+		\begin{itemize}
+			\item The user has constant internet access.
+			\item The user's firewall is open to connections on port 1883, 9000, 8080, 80.
+			\item The Application Server is hosted locally.	
+		\end{itemize}
+		
+	\section{Functional Features to be tested.}
+	The tests were implemented as follows for each of the components of the entire system. Each point represents an adequate test of the feature mentioned. \textbf{This section also outlines the item pass/fail criteria for each test.}
+		\subsection{Firmware}
 		\textbf{Store to EEPROM using a struct.}
-			\begin{enumerate}
-				\item Create the appropriate structure.
-				\item Attempt to store said structure.
-				\item Create an empty struct.
-				\item Attempt to store an empty struct.
-				\item Retrieve structs from EEPROM and verify that they are correct.
-			\end{enumerate}
+		\begin{enumerate}
+			\item Create the appropriate structure.
+			\item Attempt to store said structure.
+			\item Create an empty struct.
+			\item Attempt to store an empty struct.
+			\item Retrieve structs from EEPROM and verify that they are correct.
+		\end{enumerate}
 		\textbf{Store to EEPROM using raw values.}
-			\begin{enumerate}
-				\item Declare raw values which need to be stored.
-				\item Attempt to store these accpetable values.
-				\item Retrieve data from EEPROM and verify that it is correct. 
-			\end{enumerate}
+		\begin{enumerate}
+			\item Declare raw values which need to be stored.
+			\item Attempt to store these accpetable values.
+			\item Retrieve data from EEPROM and verify that it is correct. 
+		\end{enumerate}
 		\textbf{Retrieve from EEPROM.}
-			\begin{enumerate}
-				\item Create multiple struct objects.
-				\item Store these struct objects to EEPROM.
-				\item Attempt to retreive stored objects.
-				\item Verify that the objects are correct.
-				\item Clear Memory.
-				\item Attempt to retrieve objects again.
-			\end{enumerate}
-			
+		\begin{enumerate}
+			\item Create multiple struct objects.
+			\item Store these struct objects to EEPROM.
+			\item Attempt to retreive stored objects.
+			\item Verify that the objects are correct.
+			\item Clear Memory.
+			\item Attempt to retrieve objects again.
+		\end{enumerate}
+		
 		\textbf{Check EEPROM for data.}
-			\begin{enumerate}
-				\item Calculate how many struct objects can be stored in EEPROM.
-				\item Create enough struct objects to fill EEPROM to capacity.
-				\item Call appropriate function to determine if the EEPROM is full.
-				\item Create half the capacity of struct objects.
-				\item Store these struct objects to EEPROM.
-				\item Call appropriate function to determine if the EEPROM is full.
-			\end{enumerate}
+		\begin{enumerate}
+			\item Calculate how many struct objects can be stored in EEPROM.
+			\item Create enough struct objects to fill EEPROM to capacity.
+			\item Call appropriate function to determine if the EEPROM is full.
+			\item Create half the capacity of struct objects.
+			\item Store these struct objects to EEPROM.
+			\item Call appropriate function to determine if the EEPROM is full.
+		\end{enumerate}
 		\textbf{MQTT connect, which establishes a reliable connection to the server.}
-			\begin{enumerate}
-				\item Provide incorrect host IP.
-				\item Attempt to connect.
-				\item Proivde correct host IP.
-				\item Attempt to connect.
-			\end{enumerate}
+		\begin{enumerate}
+			\item Provide incorrect host IP.
+			\item Attempt to connect.
+			\item Proivde correct host IP.
+			\item Attempt to connect.
+		\end{enumerate}
 		\textbf{MQTT publish, which publishes JSON to the server.}
-			\begin{enumerate}
-				\item Ensure connection to server is established.
-				\item Publish well-formed JSON.
-				\item Publish malformed JSON.
-				\item Ensure ACK packets are received on both occasions.
-			\end{enumerate}
-			
-		\subsubsection{Application Server}
+		\begin{enumerate}
+			\item Ensure connection to server is established.
+			\item Publish well-formed JSON.
+			\item Publish malformed JSON.
+			\item Ensure ACK packets are received on both occasions.
+		\end{enumerate}
+		
+		\subsection{Application Server}
 		
 		\textbf{Concurrent MQTT Client Connections.}
 		\begin{enumerate}
@@ -120,53 +172,109 @@
 			\item Attempt to store messages to Firebase.
 			\item Verify that all messages are present.
 		\end{enumerate}
-			
-	\section{Test Execution}
-		\subsection{Test Incident Report}
-			\subsubsection{Firmware}
-			The following incidents occured during firmware testing. Namely during:
-			\textbf{Testing the connect and publish:}
-				\begin{enumerate}
-					\item Particle Photon disconnects from WIFI after concurrent publish events.
-					\item Particle Photon does not continue publishing after disconnecting.
-				\end{enumerate}
-			\textbf{Testing the EEPROM}
-			No incidents occured with regards to testing the EEPROM.
-			\subsubsection{Application Server}
-			The following incidents occured during application server testing. Namely during:
-			\textbf{Storing to Firebase}
-				\begin{enumerate}
-					\item When receiving continous messages from clients, some messages are not stored to Firebase.
-				\end{enumerate}
-			
-		\subsection{Test Log}
-			\subsubsection{Application Server}
-					\includegraphics[width=\textwidth]{images/TestOutput.png}
 	
-	\section{Test Summary Report}
-		\subsection{Firmware}
-			The current state of the Firmware is as follows.
-			\\The following tests need to be implemented and assessed:
-			\begin{itemize}
-				\item Attempt to publish a message without establishing a reliable connection to the server.
-				\item Attempt to overflow variables.
-				\item Attempt store incorrect datatypes.
-				\item Test if EEPROM clears once full.
-				\item Check data persists after device loses power.
-				\item Criteria which would cause the device to disconnect or reboot.
-			\end{itemize}
-		\subsection{Application Server}
-		The current state of the Application Server is as follows.
-		\\The following tests need to be implemented and assessed:
-			\begin{itemize}
-				\item Test whether messages received from clients contain the correct data.
-				\item Attempt to store malformed JSON to Firebase.
-				\item Test store methods using parameterized test.
-				\item Test \textit{checkMonth()} with parameterized tests.
-				\item Test \textit{validateID()} using parameterized tests.
-				\item Test appropriate exceptions which are included within the exceptions package.
-			\end{itemize}
-			
-		As a whole, the system functions as expected using expected parameters.
-		The next round of testing will be to ensure that the system functions correctly under unexpected conditions.
+		\subsubsection{Web Application}
+		\textbf{User Login}
+			\begin{enumerate}
+				\item Test correct user credentials.
+				\item Test incorrect login credentials.
+				\item Verify API token exists after login.
+				\item Verify API token deleted after logout.
+			\end{enumerate}
+		\textbf{User Register}
+			\begin{enumerate}
+				\item Test ideal user registration: Alphanumeric password 8+ characters long.
+				Verify user email.
+				\item Test non-ideal user registration: Simple password should fail registration.
+				Emails with non-FQTLDs: "temp@co" should fail registration.
+			\end{enumerate}
+		\textbf{Retreive intial dashboard data}
+			\begin{enumerate}
+				\item Verify Firebase object exists in controller.
+				\item Verify correct promise received from Firebase.
+				\item Retreive all data from all devices.
+				\item Calculated averages, totals and carbon footprint values are accurate.
+			\end{enumerate}
+		\textbf{Retreive list of devices}
+			\begin{enumerate}
+				\item Verify Firebase object exists in controller.
+				\item Verify correct promise received from Firebase.
+				\item Retreive all device meta details.
+			\end{enumerate}
+		\textbf{Retreive device specific data}
+			\begin{enumerate}
+				\item Verify Firebase object exists in controller.
+				\item Verify correct promise received from Firebase.
+				\item Retreive all data for device based on device ID.
+			\end{enumerate}
+		\textbf{Retreive data from date range}
+			\begin{enumerate}
+				\item Verify Firebase object exists in controller.
+				\item Verify correct promise received from Firebase.
+				\item Retreive all data for device based on device ID.
+			\end{enumerate}
+	
+	\section{Other}
+		\subsection{Test Incident Report}
+		\subsubsection{Firmware}
+		The following incidents occured during firmware testing. Namely during:
+		\textbf{Testing the connect and publish:}
+		\begin{enumerate}
+			\item Particle Photon disconnects from WIFI after concurrent publish events.
+			\item Particle Photon does not continue publishing after disconnecting.
+		\end{enumerate}
+		\textbf{Testing the EEPROM}
+		No incidents occured with regards to testing the EEPROM.
+		\subsubsection{Application Server}
+		The following incidents occured during application server testing. Namely during:
+		\textbf{Storing to Firebase}
+		\begin{enumerate}
+			\item When receiving continous messages from clients, some messages are not stored to Firebase.
+		\end{enumerate}
+	
+	\section{Conclusions \& Recommendations}
+	\subsection{Firmware}
+	The current state of the Firmware is as follows.
+	\textbf{\\The following tests have been implemented and assessed:}
+	\begin{itemize}
+		\item Attempt to publish a message without establishing a reliable connection to the server.
+		\item Attempt to overflow variables.
+		\item Attempt store incorrect datatypes.
+		\item Test if EEPROM clears once full.
+		\item Check data persists after device loses power.
+		\item Criteria which would cause the device to disconnect or reboot.
+	\end{itemize}
+	
+	\subsection{Application Server}
+	The current state of the Application Server is as follows.
+	\textbf{\\The following tests have been implemented and assessed:}
+	\begin{itemize}
+		\item Test whether messages received from clients contain the correct data.
+		\item Attempt to store malformed JSON to Firebase.
+		\item Test store methods using parameterized test.
+		\item Test \textit{checkMonth()} with parameterized tests.
+		\item Test \textit{validateID()} using parameterized tests.
+		\item Test appropriate exceptions which are included within the exceptions package.
+	\end{itemize}
+	
+	\textbf{The following tests need to be implemented and assessed:}
+	\begin{itemize}
+		\item Load testing with 50 simultaneous connections.
+		\item Load testing with 100 simultaneous connections.
+		\item Load testing with 1000 simultaneous connections.
+	\end{itemize}
+	
+	\subsection{Web Application}
+	The current state of the Web Application is as follows.
+	\textbf{\\The following tests need to be implemented and assessed:}
+	\begin{itemize}
+		\item Load testing with 50 simultaneous connections.
+		\item Load testing with 100 simultaneous connections.
+		\item Load testing with 1000 simultaneous connections.
+		\item Test load time for 1000 database entries.
+		\item Test dashboard graphs with 1000 database entries.
+	\end{itemize}
+	
+	As a whole, the system functions as expected using expected parameters and under the correct conditions.\\\\The next round of testing will attempt to put strain on the system through various load tests using load testing framework "Tsung".
+	
 \end{document}
