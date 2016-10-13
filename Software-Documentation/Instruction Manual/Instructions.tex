@@ -7,13 +7,100 @@
 \usepackage{float}
 \usepackage[utf8]{inputenc}
 
-\title{Instruction manual for PowerCloud}
-\author{Marc Antel, 12026973\\ Brandon Wardley, 29005150\\ Stuart Andrews, 12153983\\ Mothusi Masibi, 12004589}
-\date{\today}
+\author{Illusion Solutions}
 
+%Document start
 \begin{document}
-	\maketitle
+	
+	%Title Page
+	\begin{titlepage}
+		\begin{center}
+			\line(1,0){300} \\
+			[0.1cm]
+			\textsc{\Huge
+				PowerCloud\\
+				Instruction Manual
+			} \\
+			\line(1,0){300} \\
+			[2.0cm]
+			\textsc{\Large
+				Illusion Solutions
+			} \\
+			[3.5cm]
+			
+		\end{center}
+		\begin{flushright}
+			\textsc{\Large
+				Stuart Andrews\\ 
+				12153983\\
+				Marc Antel\\
+				12026973\\
+				Mothusi Masibi\\
+				12004589\\
+				Brandon Wardley\\
+				29005150\\
+				[4.0cm]
+			}
+		\end{flushright}
+		\begin{center}
+			\today
+		\end{center}
+	\end{titlepage}
+	
 	\newpage
+	\tableofcontents
+	\thispagestyle{empty}
+	\newpage
+	
+	\section{Overview}
+	The goal of this project will be to measure the power consumption of machines
+	in easy, cost effective way backed by a powerful cloud based interface. Which
+	will allow the client to interrogate the data in a meaningful way. Providing in
+	depth knowledge of the power consumption. This will allow them to reduce
+	costs and save power leading to our ultimate goal of creating a better world
+	for tomorrow. There is two main components to the project. There will be
+	the software that runs on the particle(Electronic device) and is responsible for
+	logging data to the server. Then the web application that will be responsible
+	for displaying the power consumption. Advanced mathematical analysis and
+	manipulation will be performed on the data. The project will have an optional
+	goal of performing analysis on harmonics. All electronic equipment required
+	will be provided to the students.
+
+	\section{System Configuration}
+	The system is comprised of multiple components, a web application and a Java-MQTT server, with Google's Firebase as the persistence.
+	\begin{itemize}
+		\item a power usage device,
+			\begin{itemize}
+				\item The device consists of multiple separate parts:
+				\begin{itemize}
+				\item A Particle Photon
+					\begin{itemize}		
+						\item Uses header pins connected to a bread board to read values.
+						\item Uses the MQTT messaging protocol to send data to the Java server on port 1883.
+						\item Uses the Particle API for everything else.
+						\item The Particle code is C++.
+					\end{itemize}
+				\item A multifunction power monitor, used to measure kWh.
+				\item A current transformer, used to acquire accurate and real time current.
+				\item A relay to control the flow of electricity through the device.
+				\item A trip switch to manually turn the device on or off.
+				\end{itemize}					
+			\end{itemize}		
+		\item a Java-MQTT server,
+			\begin{itemize}		
+				\item Uses the Moquette MQTT library to listen, on port 1883, for messages sent from the Device.
+				\item Uses the Firebase API in order to send and retrieve data, via HTTPS, to and from the database.
+			\end{itemize}				
+		\item a web application,
+			\begin{itemize}		
+				\item Uses AngularJS.
+				\item Uses the Firebase API in order to send and retrieve data, via HTTPS, to and from the database.
+			\end{itemize}				
+		\item Google Firebase
+			\begin{itemize}
+				\item Uses HTTPS to communicate with the Java server and the Web application.
+			\end{itemize}
+	\end{itemize}
 	\section{Compiling and Installing from Source Code}
 	\subsection{Pre-requisites}
 	\textbf{Software}
