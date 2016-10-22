@@ -41,7 +41,7 @@
 				PowerCloud\\
 				Architecture Specification
 			} \\
-			\textsc{\large version 2.0}\\
+			\textsc{\large Final Version}\\
 			[0.1cm]
 			\line(1,0){300} \\
 			[2.0cm]
@@ -158,8 +158,7 @@ and architectural constraints.
 			\end{itemize}
 		\item Reliability
 			\begin{itemize}
-				\item Data measured by the devices must be accurate, up 
-				to a given level specified by the operator.
+				\item Data measured by the devices must be accurate.
 				\item The server must ensure a 99.8\% uptime, outside of 
 				regular maintenance periods.
 			\end{itemize}
@@ -184,8 +183,9 @@ and architectural constraints.
 			\end{itemize}
 		\item Scalability
 			\begin{itemize}
-				\item The server needs to handle up to 100 000 
-				simultaneous connections from deployed devices.
+				\item The server needs to handle enough messages to cater 
+				to connected devices. An initial measure of 3600 MQTT 
+				messages is used.
 			\end{itemize}
 		\item Maintainability
 			\begin{itemize}
@@ -535,7 +535,7 @@ tactics will need to be added to the project as further issues are identified.
 	The second main access channel is the Particle device, which is 
 	responsible for taking measurements from an attached appliance, and 
 	sending those measurements on to the application server. The Particle 
-	Photon communicates with the power meter using the an input pin on the Photon, 
+	Photon communicates with the power meter using an input pin on the Photon, 
 	where the measuring device is responsible for taking current and 
 	voltage readings from the appliance by using a current converter. The 
 	Photon itself is interacted with using its firmware and the Particle 
@@ -575,6 +575,17 @@ tactics will need to be added to the project as further issues are identified.
 	
 	\noindent
 	There are no alternatives to this technology, as its usage is specified by the client.
+	
+	\subsection{Efergy Split Core Current Transformer}
+	
+	The Efergy Split Core Current Transformer (CT) is a piece of hardware 
+	which utilizes the change in magnetic flux (Faraday's Law) due to the 
+	sinusoidal waveform of alternating current (AC). Using this, the 
+	amount of current being used by the attached load can be measured 
+	using the resulting voltage output by the CT. Used in conjunction 
+	with the CT is a biasing circuit, consisting out of resistors and a 
+	capacitor, which ensures that the output voltage is within a desired 
+	range for easy reading.
 	
 	
 	\subsection{MQ Telemetry Transport}
