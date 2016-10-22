@@ -121,24 +121,45 @@
 	\end{itemize}
 	
 	\subsection{Firmware}
-	Compile and flash the photon with the following commands, please take note 
-	that if you run the application server on a local machine, retrieve the IP 
-	address and insert it into the firmware's code as shown below.\\
+		\subsubsection{Manual Particle Photon Setup}
+			Compile and flash the photon with the following commands, please take note 
+			that if you run the application server on a local machine, retrieve the IP 
+			address and insert it into the firmware's code as shown below.\\
 	
-	\includegraphics[scale=0.5]{images/firmware.png}
+			\includegraphics[scale=0.5]{images/firmware.png}
 	
-	Follow the instructions here in order to compile the firmware using Particle 
-	Dev.
-	\\
-	\begin{itemize}
-		\item Open the firmware using Particle Dev.
-		\item Click on "\textit{Compile using Partcicle Cloud}".
-		\item Select the device to flash.
-		\item Click on "\textit{flash device}".
-	\end{itemize}
 	
-	\textit{If you run into errors, please see the troubleshooting guide at the end of this document.}
-	
+			Follow the instructions here in order to compile the firmware using Particle 
+			Dev.
+			\\
+			\begin{itemize}
+				\item Open the firmware using Particle Dev.
+				\item Click on "\textit{Compile using Partcicle Cloud}".
+				\item Select the device to flash.
+				\item Click on "\textit{flash device}".
+			\end{itemize}
+			
+			\textit{If you run into errors, please see the troubleshooting guide at the end of this document.}
+		\subsubsection{How to Register Device Onto System}
+			In order to register a new device onto the PowerCloud system, follow the steps:
+			
+			\begin{itemize}
+				\item Login to https://power-cloud.tech.
+				\item Proceed to the profile tab, and click on it.
+				\item Once in the profile tab (see page x, picture y) locate Particle.io Settings.
+				\item Using your Particle login details, login into Particle.io to gain access to the Particle API.
+				\item Now locate Devices on the left hand side, click on it.
+				\item Locate the Add Device tab, click "\textit{New}".
+				\item Do the following:
+				\begin{itemize}
+					\item Enter the name of the device e.g. "PhotonIT444".
+					\item Enter the appliance that which the device is attached e.g. "IT 4-44".
+					\item Enter the ID of the Photon, in order to claim it to your Particle account.
+					\item Enter the threshold of the device, so as to protect your device from potentially high currents that could prove disastrous should they reach the appliance.
+					\item Select the time interval between readings from the drop down list.
+				\end{itemize}
+			\end{itemize}
+				
 	\subsection{Application Server}
 	Currently, the \textit{application-server} branch hosts the source code for 
 	the Application Server. It needs to be compiled using maven and run on a 
