@@ -342,7 +342,7 @@ includefoot
 			\end{enumerate}
 		\end{enumerate}
 		\newpage
-		\item	Device Overview
+		\item	System Overview
 		
 		\begin{figure}[H]
 			\includegraphics[width=\textwidth]{images/SystemOverview.jpg}
@@ -362,6 +362,57 @@ includefoot
 				Carbon Emissions totalled per Devices and displayed in pi charts.
 			\end{enumerate}
 		\end{enumerate}
+		
+		\newpage
+		\item	Device Current
+		
+		\begin{enumerate}
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	User must be logged in.
+				\item	User must be on the "Devices" page.
+				\item	User must choose a device.
+				\item	User may enter a date to begin searching from, default is current day.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Returns drawn line chart of the devices current data of the day.
+			\end{enumerate}
+		\end{enumerate}
+		
+		\item	Device Power
+		
+		\begin{enumerate}
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	User must be logged in.
+				\item	User must be on the "Devices" page.
+				\item	User must choose a device.
+				\item	User may enter a date to begin searching from, default is current day.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Returns drawn line chart of the devices power data of the day.
+			\end{enumerate}
+		\end{enumerate}
+		
+		\item	Device Real-time
+	
+		\begin{enumerate}
+			\item  Pre-Conditions
+			\begin{enumerate}
+				\item	User must be logged in.
+				\item	User must be on the "Devices" page.
+				\item	User must choose a device.
+				\item   User must ensure they have logged in particle cloud via the profile page 
+				to generate an authorisation token.
+			\end{enumerate}
+			\item  Post-Conditions		
+			\begin{enumerate}
+				\item	Returns two real-time line charts of the devices current and power data of the day.
+			\end{enumerate}
+		\end{enumerate}
+		
 		\newpage
 		\item	Switch Device On/Off
 		
