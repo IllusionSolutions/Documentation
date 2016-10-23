@@ -203,50 +203,241 @@
 	\end{itemize}
 	
 	\subsection{Web Application}
-	To start the PowerCloud Web application open the console.
+		\subsubsection{Manual Web Application Setup}
+		To start the PowerCloud Web application open the console.
+		
+		\begin{itemize}
+			\item \textit{npm install}
+			\item \textit{bower install}
+			\item \textit{gulp serve}
+		\end{itemize}
 	
-	\begin{itemize}
-		\item \textit{npm install}
-		\item \textit{bower install}
-		\item \textit{gulp serve}
-	\end{itemize}
-	
-	The web application should now be available on \textbf{http://localhost:9000/}
-	
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/login.png}
-		\caption{Initial login screen. \label{overflow}}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/login2.png}
-		\caption{Completed login screen. \label{overflow}}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/Overview.png}
-		\caption{Overview screen. \label{overflow}}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/profile.png}
-		\caption{Profile settings. \label{overflow}}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/view.png}
-		\caption{Monitored Areas. \label{overflow}}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/settings1.png}
-		\caption{Data display page. \label{overflow}}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\includegraphics[width=\textwidth]{images/settings.png}
-		\caption{Device settings page. \label{overflow}}
-	\end{figure}
+		The web application should now be available on \textbf{http://localhost:9000/}
+		
+		\subsubsection{Web Application}
+		The web application can be accessed via \textbf{https://power-cloud.tech}
+
+		\subsubsection{Screenshots}	
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/login.png}
+			\caption{Initial login screen. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Login
+			\begin{enumerate}
+				\item Fill in your email and password.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/login2.png}
+			\caption{Completed login screen. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Login
+			\begin{enumerate}
+				\item Click "Login".
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Overview_general.png}
+			\caption{Overview screen. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Overview
+			\begin{enumerate}
+				\item Sidebar menu, with selectable locations.
+				\item Selection between data over a single day or several.
+				\item Different tabs for different collections of data.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Overview_single_day.png}
+			\caption{Profile settings. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Overview
+			\begin{enumerate}
+				\item Single day selection for data.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Overview_multiple_day.png}
+			\caption{Monitored Areas. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Overview
+			\begin{enumerate}
+				\item Multiple day selection for data.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Overview_CurrentPie_Table.png}
+			\caption{Data display page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Overview
+			\begin{enumerate}
+				\item Averaged data over all devices selected, with key pieces of information 
+				displayed, with each pertaining device labelled.
+				\item Percentages of consumption of current over the collection of data.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Overview_PowerPie.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Overview
+			\begin{enumerate}
+				\item As with the current pie above, this pie is identical in purpose, but pertains to power consumption.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Overview_PowerBar.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Overview
+			\begin{enumerate}
+				\item Bar chart for power usage only, with 3 specific data types highlighted, the 
+				min, the max and the average usage for each device in the collection of data.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Overview_CurrentBar.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Overview
+			\begin{enumerate}
+				\item Bar chart for power usage only, with 3 specific data types highlighted, the 
+				min, the max and the average usage for each device in the collection of data.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Overview_Emissions.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Overview
+			\begin{enumerate}
+				\item Determines and displays the equivalent amount of coal it took to generate 
+				the power usage.
+				\item Determines and displays the amount of days the average household could be  
+				powered by the power consumed.
+				\item Determines the amount of kg of Carbon Dioxide is produced for the power 
+				consumed.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Devices.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Devices
+			\begin{enumerate}
+				\item We're in the devices tab, where we can view all our current devices.
+				\item Click new to drop the modal down to add a new device, requires Particle.io login in Profile.
+				\item Click to view information on specific device.
+				\item View report for this specific device.
+				\item All the boxes here refer to a device each, with the exception of Add Device.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Reports.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Report
+			\begin{enumerate}
+				\item Tabular data from that the date specified in 4.
+				\item The total cost calculated from the data collection.
+				\item Last new value in the data collection.
+				\item Date selector to view specific data.
+				\item Name of the current Device and its Appliance.
+				\item The different report tabs to view different data.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Reports_PowerLine.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Report
+			\begin{enumerate}
+				\item Power vs Time line graph for the selected date.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Reports_CurrentLine.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Report
+			\begin{enumerate}
+				\item Current vs Time line graph for the selected date.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Reports_RealtimeLines.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}
+		\begin{itemize}
+			\item Report
+			\begin{enumerate}
+				\item Realtime Current and Power vs Time line direct from the device graph when the tab is accessed.
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Device_Settings.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}		
+		\begin{itemize}
+			\item Report
+			\begin{enumerate}
+				\item Toggle the device power.
+				\item Notification settings to change the email to which change in settings are made.
+				\item Device Management
+				\begin{enumerate}
+					\item Disable the device, once clicked, tells the server to ignore all data from that device.
+					\item Flash device, once clicked, writes new firmware to the device.
+					\item Threshold, once clicked, allows the user to change the threshold to protect against surges.
+					\item Rename device.
+				\end{enumerate}
+			\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{images/Profile.png}
+			\caption{Device settings page. \label{overflow}}
+		\end{figure}		
+		\begin{itemize}
+			\item Profile
+			\begin{enumerate}
+				\item Toggle the device power.
+				\item Notification settings to change the email to which change in settings are made.
+				\item Device Management
+				\begin{enumerate}
+					\item Edit account settings, like email and password.
+					\item Login to Particle.io, so the user can toggle his/her device and use Device Management.
+				\end{enumerate}
+			\end{enumerate}
+		\end{itemize}
 	
 	\newpage
 	\section{Troubleshooting}
