@@ -6,7 +6,15 @@
 %Packages
 \usepackage{graphicx}
 \usepackage{grffile}
+\usepackage{color}
 \usepackage{float}
+\usepackage[utf8]{inputenc}
+
+%Margins
+\usepackage[
+margin=2cm,
+includefoot
+]{geometry}
 
 
 \title{Testing Document for PowerCloud}
@@ -17,15 +25,16 @@
 \begin{document}
 	
 	%Title Page
+	\newgeometry{top=4.5cm}
 	\begin{titlepage}
 		\begin{center}
 			\line(1,0){300} \\
 			[0.1cm]
 			\textsc{\Huge
 				PowerCloud\\
-				Instruction Manual
+				Testing Document
 			} \\
-			\textsc{\large version 2.0}\\
+			\textsc{\large Final version}\\
 			[0.1cm]
 			\line(1,0){300} \\
 			[2.0cm]
@@ -54,6 +63,7 @@
 	\end{titlepage}
 	
 	\newpage
+	\restoregeometry
 	\tableofcontents
 	\thispagestyle{empty}
 	\newpage

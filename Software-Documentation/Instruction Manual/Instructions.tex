@@ -7,12 +7,19 @@
 \usepackage{float}
 \usepackage[utf8]{inputenc}
 
+%Margins
+\usepackage[
+margin=2cm,
+includefoot
+]{geometry}
+
 \author{Illusion Solutions}
 
 %Document start
 \begin{document}
 	
 	%Title Page
+	\newgeometry{top=4.5cm}
 	\begin{titlepage}
 		\begin{center}
 			\line(1,0){300} \\
@@ -21,6 +28,8 @@
 				PowerCloud\\
 				Instruction Manual
 			} \\
+			\textsc{\large Final version}\\
+			[0.1cm]
 			\line(1,0){300} \\
 			[2.0cm]
 			\textsc{\Large
@@ -48,6 +57,7 @@
 	\end{titlepage}
 	
 	\newpage
+	\restoregeometry
 	\tableofcontents
 	\thispagestyle{empty}
 	\newpage
